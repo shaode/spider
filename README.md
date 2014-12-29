@@ -74,52 +74,19 @@
 
 ## 本地目录结构
 
-	|-- `assets` 静态文件资源库（存放编译打包后的js&css）
-	
-			|-- `alipay`
-			
-			|-- `arale`
-			
-			|-- `cellula`
-			
-			|-- `fdp` `Form` `dataView` `paginator`
-			
-			|-- `gallery`
-			
-			|- `seajs-style`
-			
-			|-- `select`
-			
-			|-- `tinyscrollbar`
-			
-			|-- ...
-			
-	|-- `controllers` 业务层
-	
-	|-- `images` 
-	
-	|-- `lib` 公共js库
-
-    |-- `public` 公共文件
-
-	|-- `sea-modules` js依赖的组件模块
-
-	/-- `static` 静态文件
-	
-	/-- `views`
-			
+	|-- assets 静态文件资源库 存放编译打包后的js&css（第一次使用需要先执行`grunt native`）
+	|-- controllers 业务层
+	|-- lib 公共js库
+    |-- public` 公共文件
+	|-- sea-modules js依赖的组件模块
+	|-- static 静态文件
+	|-- views
 			|-- config 样式脚本配置
-			
 			|-- templates 模板
-	
 	Gruntfile.js 静态资源部署脚本
-
 	routes.js 站点路由配置
-
 	app.js 站点入口
-
 	config.js 站点配置
-
 	package.js 项目配置
 	
 ## Bug 反馈及需求提交
