@@ -1,25 +1,22 @@
-ml
-.idea/
-.ipr
-.iws
-.settings
-*~
-~*
-*.diff
-*.patch
-*.bak
+# system
 .DS_Store
 Thumbs.db
+
+# editor
+.idea
 .project
-.*proj
+.settings
+
+# build
+.sass-cache
+.build
+
+# tools
 .svn/
-*.swp
-*.swo
-*.pyc
-*.pyo
-build
-node_modules/
-_site
-.cache
-dist
+
+# customize
 assets/
+
+# node.js
+npm-debug.log
+node_modules/
