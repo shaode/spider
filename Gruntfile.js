@@ -114,22 +114,6 @@ module.exports = function(grunt) {
 					dest : 'assets'
 				}]
 			},
-            deleter: {
-                files : [{
-                    expand : true,
-                    cwd : 'lib/',
-                    src : ['deleter/**/*'],
-                    dest : 'assets'
-                }]
-            },
-            customMenu: {
-                files : [{
-                    expand : true,
-                    cwd : 'lib/',
-                    src : ['customMenu/**/*'],
-                    dest : 'assets'
-                }]
-            },
             globalcss: {
 				files : [{
 					expand : true,
@@ -253,30 +237,6 @@ module.exports = function(grunt) {
 					dest : 'assets/mockAsyn/1.0.0'
 				}]
 			},
-            deleter: {
-                options : {
-                    idleading : 'deleter/1.0.0/'
-                },
-                files : [{
-                    expand : true,
-                    filter : 'isFile',
-                    cwd : 'lib/deleter/1.0.0',
-                    src : '*.js',
-                    dest : 'assets/deleter/1.0.0'
-                }]
-            },
-            customMenu: {
-                options : {
-                    idleading : 'customMenu/1.0.0/'
-                },
-                files : [{
-                    expand : true,
-                    filter : 'isFile',
-                    cwd : 'lib/customMenu/1.0.0',
-                    src : '*.js',
-                    dest : 'assets/customMenu/1.0.0'
-                }]
-            },
             /*
              * 业务层
              */
@@ -300,7 +260,7 @@ module.exports = function(grunt) {
             minify: {
                 expand: true,
                 cwd: 'assets/',
-                src: ['select/**/*.css', 'tinyscrollbar/**/*.css', 'deleter/**/*.css'],
+                src: ['select/**/*.css', 'tinyscrollbar/**/*.css'],
                 dest: 'assets/',
                 ext: '.css'
             },
@@ -356,7 +316,7 @@ module.exports = function(grunt) {
                 files : [{
                     expand : true,
                     cwd : 'assets/',
-                    src : ['$.js', 'select/**/*.js', 'cellula/**/*.js', 'fdp/**/*.js', 'tinyscrollbar/**/*.js', 'money/**/*.js', 'deleter/**/*.js', 'foundation/5.5.0/foundation.js', 'common/**/*.js', 'mytest/**/*.js'],
+                    src : ['$.js', 'select/**/*.js', 'cellula/**/*.js', 'fdp/**/*.js', 'tinyscrollbar/**/*.js', 'money/**/*.js', 'foundation/5.5.0/foundation.js', 'common/**/*.js', 'mytest/**/*.js'],
                     dest : 'assets/'
                 }]
             }
