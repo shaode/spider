@@ -48,16 +48,6 @@
 
 - 修改controllers下面的js文件需要重启node服务`node app.js`
 
-## 如何配置脚手架整合的ui library？
-
-在controllers层的nodejs文件中设置：
-
-**useColumnal: true** 加载columnal2.0
-
-**useFoundation: true** 加载Foundation5.5.0
-
-具体可以参考`controllers/mytest/foundation.js`
-
 ## Q&A
 
 - 问：这套ui-library主要用来完成什么任务？
@@ -71,6 +61,16 @@
 - 问：关于自己开发组件模块的规范是什么呢？
 
 答：现在库里面已经有`cellula` `fdp`之类的公共模块了，理论上我们在开发环境中会涉及到2大类型的模块，一类是公共的模块，也就是可以供不同系统和业务使用的模块，它们通常是`js`底层的类库扩展或者是基于场景模型的构建，比如`cellula` `fdp`之类，它们存放在lib下面，另一类是纯业务型的模块组件，它们存放在`static`下面，而`assets`则是存放系统编译打包压缩后的`js&css`也就是在线上环境被调用的静态文件。
+
+- 问：如何配置脚手架整合的ui library？
+
+答：在controllers层的nodejs文件中设置：
+
+**useColumnal: true** 加载columnal2.0
+
+**useFoundation: true** 加载Foundation5.5.0
+
+具体可以参考`controllers/mytest/foundation.js`
 
 ## 本地目录结构
 
