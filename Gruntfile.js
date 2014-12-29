@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 					dest : 'assets'
 				}]
 			},
-			cp_araleModule: {
+			araleModule: {
 				files : [{
 					expand : true,
 					cwd : 'sea-modules/',
@@ -363,7 +363,17 @@ module.exports = function(grunt) {
         },
 		clean : {
 			temp : ['arale', 'alipay', 'gallery', 'alice']
-		}
+		},
+        watch: {
+            style: {
+                files: ['static/css/**/*.css'],
+                tasks: ['cssmin', 'css_import']
+            },
+            scripts: {
+                files: ['lib/**/**/*.js', 'static/js/**/*.js'],
+                tasks: ['transport', 'concat', 'uglify']
+            }
+        }
 	});
 
 	// These plugins provide necessary tasks.
@@ -376,7 +386,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-css-import');
 	//grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	// grunt.loadNpmTasks('grunt-contrib-jshint');
-	// grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
 	grunt.registerTask('native', [
 		'copy',
