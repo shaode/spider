@@ -17,7 +17,7 @@
 
     `node app.js` 例如访问：http://localhost:3000就可以看到本地环境的页面效果
 
-## 如何在本地快速新建一个页面？
+### 如何在本地快速新建一个页面？
 
 以项目中的singleForm案例来简述构建过程：
 
@@ -40,7 +40,7 @@
 
 8. 项目根目录下执行`node app.js`访问`http://localhost:3000/mytest/singleForm`
 
-###Tips
+### Tips
 
 - 每次pull下来先执行`npm install` 和 `grunt native`
 
@@ -48,7 +48,7 @@
 
 - 修改controllers下面的js文件需要重启node服务`node app.js`
 
-## Q&A
+### Q&A
 
 - 问：这套ui-library主要用来完成什么任务？
 
