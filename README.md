@@ -15,7 +15,7 @@
 
     `grunt native` 部署本地静态资源，成功后在项目根目录下会产出assets目录（只在初次执行）
 
-    `node app.js` 例如访问：http://localhost:3000就可以看到本地环境的页面效果
+    `node app.js` 访问：`http://localhost:3000`就可以看到本地环境的页面效果
 
 ### 如何在本地快速新建一个页面？
 
