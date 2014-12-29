@@ -8,7 +8,7 @@
 
 ----
 
-1. 将项目克隆到本地：`git clone git@github.com:ar-insect/native.git`
+1. 将项目克隆到本地：`git clone git@github.com:automatically/font-native.git`
 
 2. 切换到项目根目录下面，比如：`cd ~/native`依次执行
 
