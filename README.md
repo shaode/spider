@@ -120,7 +120,7 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 ### 代码风格
 
-**缩进**
+* 缩进
 
 - 两个空格，无需更长的缩进，无需Tab缩进：Google、NPM、Node.js、Idiomatic
 
@@ -128,7 +128,7 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 - 4个空格：Crockford
 
-**参数和表达式之间的空格**
+* 参数和表达式之间的空格
 
 - 使用紧凑型风格：Google、NPM、Node.js
 
@@ -142,13 +142,13 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 大部分指南中，都提醒开发者不要在语句结尾处有任何的空格。
 
-**代码行长度**
+* 代码行长度
 
 - 最多80个字符：Google、NPM、Node.js、Crockford（当在代码块中，除了2个空格外的其他缩进允许将函数参数与首个函数参数的位置对齐。另一种选择是当自动换行时使用4个空格缩进，而不是2个。）
 
 - 没有发表意见：jQuery、Idiomatic
 
-**分号**
+* 分号
 
 - 始终使用分号，不依赖于隐式插入：Google、Node.js、Crockford
 
@@ -156,13 +156,13 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 - 没有发表意见：jQuery、Idiomatic
 
-**注释**
+* 注释
 
 - 遵循JSDoc约定：Google、Idiomatic
 
 - 没有发表意见：NPM、Node.js、jQuery、Crockford
 
-**引号**
+* 引号
 
 - 推荐单引号：Google、Node.js
 
@@ -170,7 +170,7 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 - 没有发表意见：NPM、Idiomatic、Crockford
 
-**变量声明**
+* 变量声明
 
 - 一次声明一个，不使用逗号：Node.js
 
@@ -187,7 +187,7 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 - 没有发表意见：Google、Crockford
 
-**大括号**
+* 大括号
 
 - 在同一行使用左大括号：Google、NPM、Node.js、Idiomatic、 jQuery、Crockford
 
@@ -195,7 +195,7 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 NPM指南中指出，只在代码块需要包含下一行时使用大括号，否则不使用。
 
-**全局变量**
+* 全局变量
 
 - 不要使用全局变量：Google、Crockford（谷歌表示，全局变量命名冲突难以调试，并可能在两个项目进行正整合时出现一些棘手的问题。为了便于共享公用的JavaScript代码，需要制定公约来避免冲突发生。Crockford认为不应该使用隐式全局变量。）
 
@@ -203,14 +203,14 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 ### 命名风格
 
-**变量命名**
+* 变量命名
 
 - 开始的第一个单词小写，之后的所有单词首字母大写：Google、NPM、Node.js、Idiomatic
 
     var foo = "";
     var fooName = "";
 
-**常量命名**
+* 常量命名
 
 - 使用大写字母：Google、NPM、Node.js
 
@@ -218,7 +218,7 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 - 没有发表意见：jQuery、Idiomatic、Crockford
 
-**函数命名**
+* 函数命名
 
 - 开始的第一个单词小写，之后的所有单词首字母大写（驼峰式）：Google、NPM、Idiomatic、Node.js（推荐使用长的、具描述性的函数名）
 
@@ -233,7 +233,7 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 - 没有发表意见：jQuery、Crockford
 
-**数组命名**
+* 数组命名
 
 - 使用复数形式：Idiomatic
 
@@ -241,7 +241,7 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 - 没有发表意见：Google、jQuery、NPM、Node.js、Crockford
 
-**对象和类命名**
+* 对象和类命名
 
 - 使用如下形式：Google、NPM、Node.js
 
@@ -249,7 +249,7 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 - 没有发表意见：jQuery、Idiomatic、Crockford
 
-**其他命名
+* 其他命名
 
 - 针对长文件名和配置键使用all-lower-hyphen-css-case形式：NPM
 
