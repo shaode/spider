@@ -1,18 +1,18 @@
 {
-  "name": "native",
+  "name": "front-native",
   "description": "Native Font Development...",
   "version": "1.0.0",
-  "homepage": "https://github.com/ar-insect/native",
+  "homepage": "https://github.com/automatically/front-native",
   "author": {
-    "name": "'ar-insect'",
-    "email": "'ar.insect@gmail.com'"
+    "name": "'ar.insect'",
+    "email": "'603227937@qq.com'"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ar-insect/native.git"
+    "url": "git@github.com:automatically/front-native.git"
   },
   "bugs": {
-    "url": "https://github.com/ar-insect/native/issues"
+    "url": "https://github.com/automatically/front-native/issues"
   },
   "licenses": [
     {
@@ -59,7 +59,7 @@
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-cssmin": "^0.9.0",
-    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.6.0",
     "grunt-contrib-watch": "~0.4.0",

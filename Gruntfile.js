@@ -321,6 +321,25 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        jshint: {
+            ignore_warning: {
+                options: {
+                    "curly"         : false,     // true: Require {} for every new block or scope
+                    "eqeqeq"        : false,     // true: Require triple equals (===) for comparison
+                    "immed"         : false,    // true: Require immediate invocations to be wrapped in parens e.g. `(function () { } ());`
+                    "latedef"       : false,    // true: Require variables/functions to be defined before being used
+                    "newcap"        : false,    // true: Require capitalization of all constructor functions e.g. `new F()`
+                    "noarg"         : false,     // true: Prohibit use of `arguments.caller` and `arguments.callee`
+                    "sub"           : false,     // true: Prohibit use of empty blocks
+                    "undef"         : false,     // true: Require all non-global variables to be declared (prevents global leaks)
+                    "boss"          : false,     // true: Require all defined variables be used
+                    "eqnull"        : false,     // true: Requires all functions run in ES5 Strict Mode
+                    "es3"           : false,    // {int} Max number of formal params allowed per function
+                    "-W015"         : false
+                },
+                src: ['static/js/**/**/*.js']
+            }
+        },
 		clean : {
 			temp : ['arale', 'alipay', 'gallery', 'alice']
 		},
@@ -330,7 +349,7 @@ module.exports = function(grunt) {
                 tasks: ['cssmin', 'css_import']
             },
             scripts: {
-                files: ['lib/**/**/*.js', 'static/js/**/*.js'],
+                files: ['lib/**/**/*.js', 'static/js/**/**/*.js'],
                 tasks: ['transport', 'concat', 'uglify']
             }
         }
@@ -345,7 +364,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-css-import');
 	//grunt.loadNpmTasks('grunt-contrib-nodeunit');
-	// grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
 	grunt.registerTask('native', [
@@ -354,8 +373,9 @@ module.exports = function(grunt) {
 		'concat',
 		'cssmin',
         'css_import',
+        'uglify',
 		'clean',
-        'uglify'
+        'jshint'
 	]);
 
 };
