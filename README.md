@@ -249,9 +249,26 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 - 没有发表意见：jQuery、Idiomatic、Crockford
 
-**其他命名**
+**其他命名
 
 - 针对长文件名和配置键使用all-lower-hyphen-css-case形式：NPM
 
 
 ## 参考、使用的项目
+
+* [Zepto.js](https://github.com/madrobby/zepto) ([MITLicense](https://github.com/madrobby/zepto/blob/master/MIT-LICENSE))
+
+* [Sea.js](https://github.com/seajs/seajs) ([MIT License](https://github.com/seajs/seajs/blob/master/LICENSE.md))
+
+* [Alice](https://github.com/aliceui/aliceui.org/) ([MITLicense](https://github.com/aliceui/aliceui.org/blob/master/LICENSE))
+
+* [Arale](https://github.com/aralejs/aralejs.org/) ([MITLicense](https://github.com/aralejs/aralejs.org/blob/master/LICENSE))
+
+* [Handlebars.js](https://github.com/wycats/handlebars.js) ([MITLicense](https://github.com/wycats/handlebars.js/blob/master/LICENSE))
+
+* [normalize.css](https://github.com/necolas/normalize.css) ([MITLicense](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
+
+* [Bootstrap](https://github.com/twbs/bootstrap) ([MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE))
+
+* [Foundation](https://github.com/zurb/foundation) ([MITLicense](https://github.com/zurb/foundation/blob/master/LICENSE))
+
