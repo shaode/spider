@@ -272,3 +272,8 @@ NPM指南中指出，只在代码块需要包含下一行时使用大括号，�
 
 * [Foundation](https://github.com/zurb/foundation) ([MITLicense](https://github.com/zurb/foundation/blob/master/LICENSE))
 
+### Developed with Open Source Licensed [WebStorm](http://www.jetbrains.com/webstorm/)
+
+<a href="http://www.jetbrains.com/webstorm/" target="_blank">
+<img src="http://ww1.sinaimg.cn/large/005yyi5Jjw1elpp6svs2eg30k004i3ye.gif" width="240" />
+</a>
