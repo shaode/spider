@@ -73,7 +73,9 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 具体可以参考`controllers/mytest/foundation.js`
 
-## 本地目录结构
+## 开发及构建
+
+### 目录结构
 
 	|-- assets 静态文件资源库 存放编译打包后的js&css（第一次使用需要先执行`grunt native`）
 	|-- controllers 业务层
@@ -89,7 +91,27 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 	app.js 站点入口
 	config.js 站点配置
 	package.js 项目配置
-	
+
+### 构建工具
+
+front-native使用[grunt](http://gruntjs.com)构建项目
+
+首先安装Grunt CLI
+
+    npm install -g grunt-cli
+
+Clone项目
+
+    git clone git@github.com:automatically/front-native.git
+
+然后进入目录安装依赖：
+
+    npm install
+
+最后执行：
+
+    grunt native
+
 ## Bug 反馈及需求提交
 
 ### Bug 反馈
