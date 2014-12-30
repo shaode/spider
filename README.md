@@ -4,11 +4,11 @@
 
 ## 功能简介
 
-font-native是一个前端服务化的项目构建脚手架，整合业界优秀的框架、组件库、ui等，下载到本地直接使用，方便二次开发。
+front-native是一个前端服务化的项目构建脚手架，整合业界优秀的框架、组件库、ui等，下载到本地直接使用，方便二次开发。
 
 ## 下载及使用
 
-1. 将项目克隆到本地：`git clone git@github.com:automatically/font-native.git`
+1. 将项目克隆到本地：`git clone git@github.com:automatically/front-native.git`
 
 2. 切换到项目根目录下面，比如：`cd ~/native`依次执行
 
