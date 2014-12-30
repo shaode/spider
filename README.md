@@ -96,11 +96,11 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 front-native使用[grunt](http://gruntjs.com)构建项目
 
-首先安装Grunt CLI
+首先安装Grunt CLI：
 
     npm install -g grunt-cli
 
-Clone项目
+Clone项目：
 
     git clone git@github.com:automatically/front-native.git
 
