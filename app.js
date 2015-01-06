@@ -36,7 +36,7 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // 模板引擎使用vm
 app.engine('vm', function(path, options, fn) {
-    //console.log( _.merge({ui: ui.config(path)}, options));
+    console.log( _.merge({ui: ui.config(path)}, options));
     try {
         fn(null, velocity.render(fs.readFileSync(path).toString(), _.merge({ui: ui.config(path)}, options), macros, {
             parse: function(file) {

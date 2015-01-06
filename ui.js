@@ -16,6 +16,25 @@ var ui = {
     }
 };
 
+function inline(module, page) {
+    var embed = {};
+    var cssSource, jsSource;
+    var path = 'views/ui/' + module + '/';
+    try {
+        cssSource = rf.readFileSync(path + page + '.css', 'utf-8');
+        embed['__style'] = cssSource;
+    } catch(e) {
+        embed['__style'] = '';
+    }
+    try {
+        jsSource = rf.readFileSync(path + page + '.js', 'utf-8');
+        embed['__script'] = jsSource;
+    } catch(e) {
+        embed['__script'] = '';
+    }
+    return embed;
+}
+
 function getKey(path) {
     var __key;
     if (path && _.isString(path)) {
@@ -54,6 +73,7 @@ function readJson(module) {
 function parseConfig(key) {
     var module, page, globalConfig, config;
     var i, j, k, arr = [], tgc = {}, tc = {};
+    var css, js;
     arr = key.match(/^(.+)[\\\/](.+)$/);
     module = arr[1];
     page = arr[2];
@@ -128,14 +148,19 @@ function parseConfig(key) {
             }
         }
     }
+
+    _.merge( tc['page'], inline(module, page) );
+
     if (tc['css']) {
         tgc['css'] = tgc['css'].concat( tc['css'] );
         delete tc['css'];
     }
+
     if (tc['js']) {
         tgc['js'] = tgc['js'].concat( tc['js'] );
         delete tc['js'];
     }
+
     return _.extend(tgc, tc);
 }
 
