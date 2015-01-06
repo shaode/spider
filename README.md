@@ -30,9 +30,9 @@ front-native是一个前端服务化的项目构建脚手架，整合业界优�
 
 4. 在`gruntfile.js`里面新增样式脚本部署的相关配置（依赖配置在`package.json`的`alias`），完成后在项目根目录下执行`grunt native`打包部署静态资源
 
-5. 在views/ui/mytest/config.json配置打包部署好的脚步
+5. 在views/ui/mytest/config.json配置打包部署好的脚本
 
-6. 在`routes.js`加入页面访问的规则
+6. 在`routes.js`加入页面访问规则
 
 7. 最后执行`node app.js`访问`http://localhost:3000/mytest/singleForm`预览页面效果
 
