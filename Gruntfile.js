@@ -2,11 +2,16 @@
 
 module.exports = function(grunt) {
 
+    var _ = grunt._;
+
 	var transport = require('grunt-cmd-transport');
+
 	var style = transport.style.init(grunt);
+
 	var text = transport.style.init(grunt);
+
 	var script = transport.script.init(grunt);
-	
+
 	// Project configuration.
 	grunt.initConfig({
 		// Metadata.
@@ -367,15 +372,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
-	grunt.registerTask('native', [
-		'copy',
-		'transport',
-		'concat',
-		'cssmin',
-        'css_import',
-        'uglify',
-		'clean',
-        'jshint'
-	]);
+	grunt.registerTask('native', ['copy', 'transport', 'concat', 'cssmin', 'css_import', 'uglify', 'clean', 'jshint' ]);
 
 };

@@ -17,11 +17,7 @@
     </div><!--end wrapper-->
 #end
 ##配置js
-#parse('../config/js.vm')
-#if($!__js)
-	<script>
-		$!__js
-	</script>
-#end
+#SLITERAL($ui.js)
+#SLITERAL($ui.page.js)
 </body>
 </html>

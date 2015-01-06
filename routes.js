@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var site = require('./controllers'); // default index.js
+var site = require('./controllers/home'); // default index.js
 var mytest = require('./controllers/mytest/');
 var singleForm = require('./controllers/mytest/singleForm.js');
 var foundation = require('./controllers/mytest/foundation.js');

@@ -9,7 +9,7 @@
         <meta name="description" content="$!description" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>$!{title}</title>
+        <title>$ui.page.title</title>
         ## seajs配置本地化
         <script charset="utf-8" src="/assets/sea.js"></script>
         <script charset="utf-8" src="/assets/seajs-style/1.0.2/seajs-style.js"></script>
@@ -32,12 +32,8 @@
             <script src="/assets/$.js"></script>
         #end
     	##配置css
-		#parse('../config/css.vm')
-		#if($!__style)
-			<style>
-				$!__style
-			</style>
-		#end
+        #SLITERAL($ui.css)
+        #SLITERAL($ui.page.css)
     </head>
     <!--[if lt IE 7]><body class="ie6"><![endif]-->
     <!--[if IE 7]><body class="ie7"><![endif]-->
@@ -54,3 +50,5 @@
         <div id="wrapper">
         #parse("../../public/component/nav.vm")
     #end
+
+

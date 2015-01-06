@@ -11,6 +11,8 @@ var config = require('./config');
 var routes = require('./routes');
 var _ = require('lodash');
 
+var ui = require('./ui');
+var macros = require('./macros');
 //var staticDir = path.join(__dirname, 'public');
 
 var app = express();
@@ -31,11 +33,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 // 模板引擎使用vm
 app.engine('vm', function(path, options, fn) {
+    //console.log( _.merge({ui: ui.config(path)}, options));
     try {
-        fn(null, velocity.render(fs.readFileSync(path).toString(), options, {
+        fn(null, velocity.render(fs.readFileSync(path).toString(), _.merge({ui: ui.config(path)}, options), macros, {
             parse: function(file) {
+                console.log('------' + file);
                 var template = fs.readFileSync(cwd + '/views/templates/' + file).toString();
                 return this.eval(template);
             }
@@ -61,4 +66,3 @@ http.createServer(app).listen(port, function() {
     .on('error', function(err) {
     console.log('Error',err.code);
 });
-
