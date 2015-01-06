@@ -6,7 +6,7 @@ var _ = require('lodash');
 
 exports.form = function(req, res) {
 
-    res.render('index.vm',{
+    res.render('mytest/singleForm.vm', {
 
     });
 };

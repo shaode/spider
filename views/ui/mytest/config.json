@@ -1,7 +1,7 @@
 {
     "default": {
-        "css": [""],
-        "js": [""],
+        "css": [],
+        "js": [],
         "title": "mytest demo",
         "head": "head111.vm",
         "foot": "foot111.vm",
@@ -30,7 +30,7 @@
         },
         "singleForm": {
             "css": [],
-            "js": ["mytest/1.0.0/singleForm.js"],
+            "js": [],
             "title": "singleForm....",
             "vars": {
                 "aaa": "aaaa",

@@ -1,3 +1,5 @@
+#parse("head.vm")
+
 <div class="summ-title">
     <h1 class="ft-bold ft-14">$!mockdata.title</h1>
 </div>
@@ -58,3 +60,9 @@
 </div>
 
 </form>
+
+<script>
+    seajs.use('mytest/1.0.0/singleForm');
+</script>
+
+#parse("footer.vm")
