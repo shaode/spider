@@ -3,16 +3,14 @@
         "css": ["home/1.0.0/index.css"],
         "js": ["home/1.0.0/index.js"],
         "title": "front native framework home default....",
-        "head": "head111.vm",
-        "foot": "foot111.vm",
+        "head": "theme/home",
+        "foot": "theme/home",
         "vars": {
             "aaa": "aaaaaaaa"
         }
     },
     "page": {
         "index": {
-            "head": "head.vm",
-            "foot": "foot.vm",
             "css": ["home/1.0.0/def.css"],
             "js": ["home/1.0.0/def.js"],
             "title": "front native framework home index....",

@@ -1,0 +1,11 @@
+
+
+<div style="padding:20px">
+
+    <h1>欢迎进入站点首页。。。Hello world!</h1>
+
+    <h3>$!hello</h3>
+
+    <b>#isString($!hello)</b>
+
+</div>

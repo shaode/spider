@@ -1,5 +1,5 @@
 #*
-@description: 系统头部
+@description: HOME自定义头部
 *#
 <!doctype html>
 <html #if($!useFoundation)class="no-js"#end>
@@ -40,15 +40,7 @@
     <!--[if IE 8]><body class="ie8"><![endif]-->
     <!--[if IE 9]><body class="ie9"><![endif]-->
     <!--[if !IE]><!--><body><!--<![endif]-->
-    #if($useColumnal)
-        <div id="wrapper" class="container">
-			#parse("../../public/component/columnalNav.vm")
-        	<div class="row">
-    #elseif($useFoundation)
-        <div>
-    #else
-        <div id="wrapper">
-        #parse("../../public/component/nav.vm")
-    #end
 
+
+<h1>HOME自定义头部</h1>
 

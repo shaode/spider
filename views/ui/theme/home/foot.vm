@@ -1,0 +1,11 @@
+#*
+@description: HOME自定义尾部
+*#
+
+<b>HOME自定义尾部</b>
+
+##配置js
+#SLITERAL($ui.js)
+#SLITERAL($ui.page.js)
+</body>
+</html>
