@@ -63,46 +63,6 @@ module.exports = function(grunt) {
 					dest : 'assets'
 				}]
 			},
-			money : {
-				files : [{
-					expand : true,
-					cwd : 'lib/',
-					src : ['money/1.0.0/*'],
-					dest : 'assets'
-				}]
-			},
-            zeroclipboard: {
-                files: [{
-                    expand: true,
-                    cwd: 'lib/',
-                    src : ['zeroclipboard/1.1.7/*'],
-                    dest: 'assets'
-                }]
-            },
-			tinyscrollbar: {
-				files : [{
-					expand : true,
-					cwd : 'lib/',
-					src : ['tinyscrollbar/1.0.0/*'],
-					dest : 'assets'
-				}]
-			},
-			accountswitcher:  {
-				files : [{
-					expand : true,
-					cwd : 'lib/',
-					src : ['accountswitcher/1.0.3/*'],
-					dest : 'assets'
-				}]
-			},
-			mockAsyn: {
-				files : [{
-					expand : true,
-					cwd : 'lib/',
-					src : ['mockAsyn/1.0.0/*'],
-					dest : 'assets'
-				}]
-			},
 			cellula : {
 				files : [{
 					expand : true,
@@ -119,6 +79,7 @@ module.exports = function(grunt) {
 					dest : 'assets'
 				}]
 			},
+            // test.
             globalcss: {
 				files : [{
 					expand : true,
@@ -158,42 +119,6 @@ module.exports = function(grunt) {
 					dest : 'assets/select/1.0.0'
 				}]
 			},
-			money : {
-				options : {
-					idleading : 'money/1.0.0/'
-				},
-				files : [{
-					expand : true,
-					filter : 'isFile',
-					cwd : 'lib/money/1.0.0',
-					src : '*.js',
-					dest : 'assets/money/1.0.0'
-				}]
-			},
-            zeroclipboard: {
-                options : {
-                    idleading : 'zeroclipboard/1.1.7/'
-                },
-                files : [{
-                    expand : true,
-                    filter : 'isFile',
-                    cwd : 'lib/zeroclipboard/1.1.7',
-                    src : '*.js',
-                    dest : 'assets/zeroclipboard/1.1.7'
-                }]
-            },
-			tinyscrollbar: {
-				options : {
-					idleading : 'tinyscrollbar/1.0.0/'
-				},
-				files : [{
-					expand : true,
-					filter : 'isFile',
-					cwd : 'lib/tinyscrollbar/1.0.0',
-					src : '*.js',
-					dest : 'assets/tinyscrollbar/1.0.0'
-				}]
-			},
 			cellula : {
 				options : {
 					idleading : 'cellula/0.4.2/'
@@ -230,18 +155,6 @@ module.exports = function(grunt) {
 					dest : 'assets/fdp/1.1.0'
 				}]
 			},
-			mockAsyn: {
-				options : {
-					idleading : 'mockAsyn/1.0.0/'
-				},
-				files : [{
-					expand : true,
-					filter : 'isFile',
-					cwd : 'lib/mockAsyn/1.0.0',
-					src : '*.js',
-					dest : 'assets/mockAsyn/1.0.0'
-				}]
-			},
             /*
              * 业务层
              */
@@ -265,7 +178,7 @@ module.exports = function(grunt) {
             minify: {
                 expand: true,
                 cwd: 'assets/',
-                src: ['select/**/*.css', 'tinyscrollbar/**/*.css'],
+                src: ['select/**/*.css'],
                 dest: 'assets/',
                 ext: '.css'
             },
@@ -321,7 +234,7 @@ module.exports = function(grunt) {
                 files : [{
                     expand : true,
                     cwd : 'assets/',
-                    src : ['$.js', 'select/**/*.js', 'cellula/**/*.js', 'fdp/**/*.js', 'tinyscrollbar/**/*.js', 'money/**/*.js', 'foundation/5.5.0/foundation.js', 'common/**/*.js', 'mytest/**/*.js'],
+                    src : ['$.js', 'select/**/*.js', 'cellula/**/*.js', 'fdp/**/*.js', 'foundation/5.5.0/foundation.js', 'common/**/*.js', 'mytest/**/*.js'],
                     dest : 'assets/'
                 }]
             }
