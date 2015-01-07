@@ -38,22 +38,6 @@ module.exports = function(grunt) {
 					dest : 'assets'
 				}]
 			},
-			araleModule: {
-				files : [{
-					expand : true,
-					cwd : 'sea-modules/',
-					src : ['arale/**', 'alipay/**', 'gallery/**', 'alice/**'],
-					dest : 'assets'
-				}]
-			},
-			arale : { // 为了避免解析依赖模块错误，需要事先将依赖的组件模块cp到项目根目录下
-				files : [{
-					expand : true,
-					cwd : 'sea-modules/',
-					src : ['arale/**', 'alipay/**', 'gallery/**'],
-					dest : '.'
-				}]
-			},
 			// 自定义插件，放在公共目录下面
 			select : {
 				files : [{
@@ -259,7 +243,7 @@ module.exports = function(grunt) {
             }
         },
 		clean : {
-			temp : ['arale', 'alipay', 'gallery', 'alice']
+			temp : []
 		},
         watch: {
             style: {
