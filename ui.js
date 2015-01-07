@@ -3,8 +3,9 @@
 var rf = require('fs');
 
 var _ = require('lodash');
+
 // default ui config
-var ui = {
+var uiConfig = {
     css: '',
     js: '',
     head: '',
@@ -70,13 +71,20 @@ function readJson(module) {
     }
 }
 
-function parseConfig(key) {
-    var module, page, globalConfig, config;
-    var i, j, k, arr = [], tgc = {}, tc = {};
-    var css, js;
+function getModule(key) {
+    var arr = [];
+    if (!key) return arr;
     arr = key.match(/^(.+)[\\\/](.+)$/);
-    module = arr[1];
-    page = arr[2];
+    return arr.splice(1);
+}
+
+function parseConfig(key) {
+    var module, page, config, globalConfig;
+    var mp = getModule(key);
+    var i, j, k, tgc = {}, tc = {};
+    var css, js;
+    module = mp[0];
+    page = mp[1];
     globalConfig = readJson();
     config = readJson(module);
     if (globalConfig) {
@@ -167,24 +175,33 @@ function parseConfig(key) {
 module.exports = {
     config: function(path) {
         var key = getKey(path);
-        if (key === undefined) return ui;
+        if (key === undefined) return uiConfig;
         var __obj = parseConfig(key);
-        ui = _.extend(ui, __obj);
-        /*
+        uiConfig = _.extend(uiConfig, __obj);
+        // layout
+        var layoutConfig = {
+            __head: uiConfig.head,
+            __screen: '',
+            __foot: uiConfig.foot,
+            module: getModule(key)[0],
+            layout: 'default'
+        };
+        uiConfig = _.merge(uiConfig, layoutConfig);
         //debug.
-        console.log('-------------ui-------------------');
-        for (var ff in ui) {
+/*
+        console.log('-------------uiConfig-------------------');
+        for (var ff in uiConfig) {
             if ('page' == ff) {
                 console.log('----------------page----------------');
-                for (var n in ui[ff]) {
-                    console.log('---' + n + ':' + ui[ff][n] + ' \n');
+                for (var n in uiConfig[ff]) {
+                    console.log('---' + n + ':' + uiConfig[ff][n] + ' \n');
                 }
                 console.log('----------------end----------------');
                 continue;
             }
-            console.log('---' + ff + ':' + ui[ff] + ' \n');
+            console.log('---' + ff + ':' + uiConfig[ff] + ' \n');
         }
-        */
-        return ui;
+*/
+        return uiConfig;
     }
 };

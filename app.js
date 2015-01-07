@@ -1,7 +1,6 @@
 /**
  * Module dependencies.
  */
-
 var fs = require('fs');
 var path = require('path');
 var http = require('http');
@@ -36,16 +35,31 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // 模板引擎使用vm
 app.engine('vm', function(path, options, fn) {
-    console.log( _.merge({ui: ui.config(path)}, options));
     try {
-        fn(null, velocity.render(fs.readFileSync(path).toString(), _.merge({ui: ui.config(path)}, options), macros, {
+        var velocityForString;
+        var uiConfig = ui.config(path);
+        var module = uiConfig.module;
+        var layout = uiConfig.layout;
+        uiConfig.__head = '../ui/' + uiConfig.__head + '/head.vm';
+        uiConfig.__screen = 'home/screen/index.vm';
+        uiConfig.__foot = '../ui/' + uiConfig.__foot + '/foot.vm';
+        path = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
+        try {
+            velocityForString = fs.readFileSync(path).toString();
+        } catch (e) {
+        }
+        fn(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros, {
             parse: function(file) {
-                console.log('------' + file);
-                var template = fs.readFileSync(cwd + '/views/templates/' + file).toString();
-                return this.eval(template);
+                var template;
+                try {
+                    template = fs.readFileSync(cwd + '/views/templates/' +  file).toString();
+                } catch (e) {
+                    template = '';
+                }
+                return this.eval( template );
             }
         }));
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         fn(err);
     }
