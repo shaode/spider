@@ -36,14 +36,16 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 // 模板引擎使用vm
 app.engine('vm', function(path, options, func) {
     try {
+        var filepath;
         var velocityForString;
         var uiConfig = ui.config(path);
         var module = uiConfig.module;
+        var body = uiConfig.body;
         var layout = uiConfig.layout;
-        uiConfig.__head = '../ui/' + uiConfig.__head + '/head.vm';
-        uiConfig.__screen = 'home/screen/index.vm';
-        uiConfig.__foot = '../ui/' + uiConfig.__foot + '/foot.vm';
-        var filepath = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
+        uiConfig.__head = 'views/ui/' + uiConfig.__head + '/head.vm';
+        uiConfig.__screen = 'views/templates/' + module + '/screen/' + body + '.vm';
+        uiConfig.__foot = 'views/ui/' + uiConfig.__foot + '/foot.vm';
+        filepath = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
         try {
             velocityForString = fs.readFileSync(filepath).toString();
         } catch (e) {
@@ -51,7 +53,7 @@ app.engine('vm', function(path, options, func) {
         func(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros));
     } catch (err) {
         console.log(err);
-        fn(err);
+        func(err);
     }
 });
 

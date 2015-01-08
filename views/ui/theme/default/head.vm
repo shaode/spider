@@ -1,0 +1,46 @@
+#*
+@description: 默认头部
+*#
+<!doctype html>
+<html #if($!useFoundation)class="no-js"#end>
+    <head>
+        <meta charset="${charset}" />
+        <meta name="keywords" content="$!keywords" />
+        <meta name="description" content="$!description" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>$ui.page.title</title>
+        ## seajs配置本地化
+        <script charset="utf-8" src="/assets/sea.js"></script>
+        <script charset="utf-8" src="/assets/seajs-style/1.0.2/seajs-style.js"></script>
+        <script>
+            seajs && seajs.config({
+                base : '/assets',
+                /*paths: {
+                 assets: '/assets'
+                 },*/
+                alias : {
+                    '$' : '$'
+                },
+                charset : 'utf-8'
+            });
+        </script>
+        #if($!useFoundation)
+            <link rel="stylesheet" href="/assets/foundation/5.5.0/foundation.css" />
+        #else
+            ## Default load jQuery 1.7.6 for global
+            <script src="/assets/$.js"></script>
+        #end
+    	##配置css
+        #SLITERAL($ui.css)
+        #SLITERAL($ui.page.css)
+    </head>
+    <!--[if lt IE 7]><body class="ie6"><![endif]-->
+    <!--[if IE 7]><body class="ie7"><![endif]-->
+    <!--[if IE 8]><body class="ie8"><![endif]-->
+    <!--[if IE 9]><body class="ie9"><![endif]-->
+    <!--[if !IE]><!--><body><!--<![endif]-->
+
+
+<h1>这是框架默认的页头</h1>
+

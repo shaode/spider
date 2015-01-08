@@ -8,14 +8,25 @@ module.exports = {
         return str;
     },
     cmsparse: function(str) {
-        return this.include.apply(this, arguments);
+        var template;
+        try {
+            template = fs.readFileSync(cwd + '/public/' + file).toString();
+            return this.eval(template);
+        } catch(err) {
+            return '';
+        }
     },
     include: function(str) {
         return this.eval(str);
     },
     parse: function(file) {
-        var template = fs.readFileSync(cwd + '/views/templates/' + file).toString();
-        return this.eval(template);
+        var template;
+        try {
+            template = fs.readFileSync(cwd + '/' + file).toString();
+            return this.eval(template);
+        } catch(err) {
+            return '';
+        }
     },
     isString: function(str) {
         return _.isString(str);

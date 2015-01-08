@@ -1,0 +1,11 @@
+#*
+@description: 默认页脚
+*#
+
+<b>这是框架默认的页脚</b>
+
+##配置js
+#SLITERAL($ui.js)
+#SLITERAL($ui.page.js)
+</body>
+</html>

@@ -39,7 +39,6 @@ function inline(module, page) {
 function getKey(path) {
     var __key;
     if (path && _.isString(path)) {
-        //__key = path.replace(/^.*(templates[\\\/])(.+)(\.vm$)/, '$2');
         __key = path.replace(/^.*[\\\/]templates[\\\/](.+)[\\\/]screen[\\\/](.+)\.vm$/, '$1,$2');
     }
     return __key;
@@ -77,10 +76,11 @@ function getModule(key) {
 }
 
 function parseConfig(key) {
-    var module, page, config, globalConfig;
-    var mp = getModule(key);
-    var i, j, k, tgc = {}, tc = {};
+    var obj;
     var css, js;
+    var i, j, k, tgc = {}, tc = {};
+    var mp = getModule(key);
+    var module, page, config, globalConfig;
     module = mp[0];
     page = mp[1];
     globalConfig = readJson();
@@ -167,7 +167,17 @@ function parseConfig(key) {
         delete tc['js'];
     }
 
-    return _.extend(tgc, tc);
+    obj = _.extend(tgc, tc);
+
+    if (!obj['head']) {
+        obj['head'] = 'theme/default';
+    }
+
+    if (!obj['foot']) {
+        obj['foot'] = 'theme/default';
+    }
+
+    return obj;
 }
 
 module.exports = {
@@ -182,24 +192,10 @@ module.exports = {
             __screen: '',
             __foot: uiConfig.foot,
             module: getModule(key)[0],
+            body: getModule(key)[1],
             layout: 'default'
         };
-        uiConfig = _.merge(uiConfig, layoutConfig);
-        //debug.
-/*
-        console.log('-------------uiConfig-------------------');
-        for (var ff in uiConfig) {
-            if ('page' == ff) {
-                console.log('----------------page----------------');
-                for (var n in uiConfig[ff]) {
-                    console.log('---' + n + ':' + uiConfig[ff][n] + ' \n');
-                }
-                console.log('----------------end----------------');
-                continue;
-            }
-            console.log('---' + ff + ':' + uiConfig[ff] + ' \n');
-        }
-*/
+        uiYConfig = _.merge(uiConfig, layoutConfig);
         return uiConfig;
     }
 };
