@@ -1,7 +1,7 @@
-#parse("head.vm")
+
 
 <div class="summ-title">
-    <h1 class="ft-bold ft-14">$!mockdata.title</h1>
+    <h1 class="ft-bold ft-14">$ui.page.title</h1>
 </div>
 <form name="form" id="resumeForm" class="mi-form" method="post" action="/demo/" >
 <div class="mi-form-item" id="username">
@@ -60,9 +60,3 @@
 </div>
 
 </form>
-
-<script>
-    seajs.use('mytest/1.0.0/singleForm');
-</script>
-
-#parse("footer.vm")

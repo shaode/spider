@@ -177,6 +177,14 @@ function parseConfig(key) {
         obj['foot'] = 'theme/default';
     }
 
+    if (obj['page']['__style'].trim() !== '') {
+        obj['page']['__style'] = '<style>' + obj['page']['__style'] + '</style>';
+    }
+
+    if (obj['page']['__script'].trim() !== '') {
+        obj['page']['__script'] = '<script>' + obj['page']['__script'] + '</script>';
+    }
+
     return obj;
 }
 

@@ -17,7 +17,13 @@ module.exports = {
         }
     },
     include: function(str) {
-        return this.eval(str);
+        var template;
+        try {
+            template = fs.readFileSync(cwd + '/views/' + file).toString();
+            return this.eval(template);
+        } catch(err) {
+            return '';
+        }
     },
     parse: function(file) {
         var template;

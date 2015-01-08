@@ -31,7 +31,7 @@
             "js": [],
             "title": "singleForm demo....",
             "vars": {
-                "aaa": "aaaa",
+                "title": "singleForm demo....",
                 "bbb": "bbbb"
             }
         }
