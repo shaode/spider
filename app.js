@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // 模板引擎使用vm
-app.engine('vm', function(path, options, fn) {
+app.engine('vm', function(path, options, func) {
     try {
         var velocityForString;
         var uiConfig = ui.config(path);
@@ -43,22 +43,12 @@ app.engine('vm', function(path, options, fn) {
         uiConfig.__head = '../ui/' + uiConfig.__head + '/head.vm';
         uiConfig.__screen = 'home/screen/index.vm';
         uiConfig.__foot = '../ui/' + uiConfig.__foot + '/foot.vm';
-        path = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
+        var filepath = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
         try {
-            velocityForString = fs.readFileSync(path).toString();
+            velocityForString = fs.readFileSync(filepath).toString();
         } catch (e) {
         }
-        fn(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros, {
-            parse: function(file) {
-                var template;
-                try {
-                    template = fs.readFileSync(cwd + '/views/templates/' +  file).toString();
-                } catch (e) {
-                    template = '';
-                }
-                return this.eval( template );
-            }
-        }));
+        func(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros));
     } catch (err) {
         console.log(err);
         fn(err);

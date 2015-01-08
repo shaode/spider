@@ -39,7 +39,8 @@ function inline(module, page) {
 function getKey(path) {
     var __key;
     if (path && _.isString(path)) {
-        __key = path.replace(/^.*(templates[\\\/])(.+)(\.vm$)/, '$2');
+        //__key = path.replace(/^.*(templates[\\\/])(.+)(\.vm$)/, '$2');
+        __key = path.replace(/^.*[\\\/]templates[\\\/](.+)[\\\/]screen[\\\/](.+)\.vm$/, '$1,$2');
     }
     return __key;
 }
@@ -72,10 +73,7 @@ function readJson(module) {
 }
 
 function getModule(key) {
-    var arr = [];
-    if (!key) return arr;
-    arr = key.match(/^(.+)[\\\/](.+)$/);
-    return arr.splice(1);
+    return key ? key.split(',') : [];
 }
 
 function parseConfig(key) {
