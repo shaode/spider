@@ -46,7 +46,6 @@ app.engine('vm', function(path, options, func) {
         uiConfig.__screen = 'views/templates/' + module + '/screen/' + body + '.vm';
         uiConfig.__foot = 'views/ui/' + uiConfig.__foot + '/foot.vm';
         filepath = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
-        console.log(uiConfig);
         try {
             velocityForString = fs.readFileSync(filepath).toString();
         } catch (e) {
