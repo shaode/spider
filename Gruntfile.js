@@ -269,6 +269,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
-	grunt.registerTask('native', ['copy', 'transport', 'concat', 'cssmin', 'css_import', 'uglify', 'clean', 'jshint' ]);
+	grunt.registerTask('default', ['copy', 'transport', 'concat', 'cssmin', 'css_import', 'uglify', 'clean', 'jshint' ]);
 
 };

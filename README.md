@@ -4,17 +4,17 @@
 
 ## 功能简介
 
-front-native是一个前端服务化的项目构建脚手架，整合业界优秀的框架、组件库、ui等，下载到本地直接使用，方便二次开发。
+front-native是一个前端服务化的项目构建脚手架，它不包含任何前端ui库和组件，使用者可以按照个人喜好整合ui和组件等，将它下载到本地使用便于二次开发。
 
 ## 下载及使用
 
 1. 将项目克隆到本地：`git clone git@github.com:automatically/front-native.git`
 
-2. 切换到项目根目录下面，比如：`cd ~/native`依次执行
+2. 切换到项目根目录下面，比如：`cd ~/front-native`依次执行
 
     `npm install` 安装项目所需要的插件
 
-    `grunt native` 部署本地静态资源，成功后在项目根目录下会产出assets目录（只在初次执行）
+    `grunt` 部署本地静态资源，成功后在项目根目录下会产出assets目录（只在初次执行）
 
     `node app.js` 访问：`http://localhost:3000`就可以看到本地环境的页面效果
 
