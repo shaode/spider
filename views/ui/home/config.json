@@ -5,6 +5,7 @@
         "title": "front native framework home default....",
         "head": "theme/home",
         "foot": "theme/home",
+        "layout": "default",
         "vars": {
             "aaa": "aaaaaaaa"
         }
@@ -14,6 +15,7 @@
             "css": ["home/1.0.0/def.css"],
             "js": ["home/1.0.0/def.js"],
             "title": "front native framework home index....",
+            "layout": "null",
             "vars": {
                 "aaa": "aaaa",
                 "bbb": "bbbb"

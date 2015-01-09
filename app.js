@@ -42,10 +42,10 @@ app.engine('vm', function(path, options, func) {
         var module = uiConfig.module;
         var body = uiConfig.body;
         var layout = uiConfig.layout;
-        uiConfig.__head = 'views/ui/' + uiConfig.__head + '/head.vm';
-        uiConfig.__screen = 'views/templates/' + module + '/screen/' + body + '.vm';
-        uiConfig.__foot = 'views/ui/' + uiConfig.__foot + '/foot.vm';
-        filepath = cwd + '/views/templates/' + module + '/layout/' + layout + '.vm';
+        uiConfig.__head = ui.util.getHead(uiConfig.__head);
+        uiConfig.__screen = ui.util.getScreen([module, body]);
+        uiConfig.__foot = ui.util.getFoot(uiConfig.__foot);
+        filepath = ui.util.getLayout([cwd, module, layout]);
         try {
             velocityForString = fs.readFileSync(filepath).toString();
         } catch (e) {

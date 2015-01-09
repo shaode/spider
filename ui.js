@@ -125,11 +125,17 @@ function parseConfig(key) {
                             }
                             continue;
                         }
-                        if ('title' == k) {
+                        if ('title' == k ) {
                             tc['page'][k] = config[i][page][k] ?
                                                                 config[i][page][k] :
                                                                 ( tc[k] ? tc[k] : (tgc[k] ? tgc[k]: '') );
                             delete tc[k] && delete tgc[k];
+                            continue;
+                        }
+                        if ('layout' == k) {
+                            tc[k] = config[i][page][k] ?
+                                config[i][page][k] :
+                                ( tc[k] ? tc[k] : (tgc[k] ? tgc[k]: '') );
                             continue;
                         }
                         if ('vars' == k) {
@@ -150,7 +156,6 @@ function parseConfig(key) {
                         tc['page'][k] = config[i][page][k];
                     }
                 }
-
             }
         }
     }
@@ -168,6 +173,10 @@ function parseConfig(key) {
     }
 
     obj = _.extend(tgc, tc);
+
+    if (!obj['layout']) {
+        obj['layout'] = 'default';
+    }
 
     if (!obj['head']) {
         obj['head'] = 'theme/default';
@@ -194,16 +203,51 @@ module.exports = {
         if (key === undefined) return uiConfig;
         var __obj = parseConfig(key);
         uiConfig = _.extend(uiConfig, __obj);
-        // layout
-        var layoutConfig = {
+        uiConfig = _.merge(uiConfig, {
             __head: uiConfig.head,
             __screen: '',
             __foot: uiConfig.foot,
             module: getModule(key)[0],
             body: getModule(key)[1],
-            layout: 'default'
-        };
-        uiYConfig = _.merge(uiConfig, layoutConfig);
+            layout: uiConfig.layout
+        });
         return uiConfig;
+    },
+    util : {
+        replaceWith: function(tpl, sub, symbol) {
+            var i = 0;
+            var str = tpl;
+            if (_.isString(sub)) {
+                return str.replace(symbol, sub);
+            }
+            if (_.isArray(sub)) {
+                while (i < sub.length) {
+                    var p = str.indexOf(symbol);
+                    var l = symbol.length;
+                    var h = str.substring(0, p);
+                    var f = str.substring(p+l);
+                    str = h + sub[i] + f;
+                    i++;
+                }
+                return str;
+            }
+            return '';
+        },
+        getHead: function(s) {
+            var tpl = 'views/ui/*/head.vm';
+            return this.replaceWith(tpl, s, '*');
+        },
+        getScreen: function(s) {
+            var tpl = 'views/templates/*/screen/*.vm';
+            return this.replaceWith(tpl, s, '*');
+        },
+        getFoot: function(s) {
+            var tpl = 'views/ui/*/foot.vm';
+            return this.replaceWith(tpl, s, '*');
+        },
+        getLayout: function(s) {
+            var tpl = '%/views/templates/%/layout/%.vm';
+            return this.replaceWith(tpl, s, '%');
+        }
     }
 };

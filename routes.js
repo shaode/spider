@@ -9,15 +9,13 @@ var foundation = require('./controllers/mytest/foundation.js');
 // ...
 
 module.exports = function(app) {
-    // home page
+    // home
     app.get('/', site.index);
     /*
      * mytest module
      */
     // index
     app.get('/mytest/', mytest.index);
-    // columnal
-    app.get('/mytest/columnal', mytest.columnal);
     // singleForm
     app.get('/mytest/singleForm', singleForm.form);
     // foundation demo
