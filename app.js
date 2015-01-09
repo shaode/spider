@@ -48,9 +48,9 @@ app.engine('vm', function(path, options, func) {
         filepath = ui.util.getLayout([cwd, module, layout]);
         try {
             velocityForString = fs.readFileSync(filepath).toString();
+            func(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros));
         } catch (e) {
         }
-        func(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros));
     } catch (err) {
         console.log(err);
         func(err);
