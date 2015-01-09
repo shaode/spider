@@ -9,6 +9,7 @@ var config = {
     debug: true,
     name: 'front local development resources',
     viewEngine: require('velocityjs'), // 模板引擎
+    tplExtension: 'vm', // 模板扩展名
     version: pkg.version,
 
     // site sittings

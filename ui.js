@@ -214,8 +214,9 @@ module.exports = {
         return uiConfig;
     },
     util : {
-        replaceWith: function(tpl, sub, symbol) {
+        replaceWith: function(tpl, sub) {
             var i = 0;
+            var symbol = '*';
             var str = tpl;
             if (_.isString(sub)) {
                 return str.replace(symbol, sub);
@@ -233,21 +234,21 @@ module.exports = {
             }
             return '';
         },
-        getHead: function(s) {
-            var tpl = 'views/ui/*/head.vm';
-            return this.replaceWith(tpl, s, '*');
+        getHead: function(str, ext) {
+            var tpl = 'views/ui/*/head.' + ext;
+            return this.replaceWith(tpl, str);
         },
-        getScreen: function(s) {
-            var tpl = 'views/templates/*/screen/*.vm';
-            return this.replaceWith(tpl, s, '*');
+        getScreen: function(str, ext) {
+            var tpl = 'views/templates/*/screen/*.' + ext;
+            return this.replaceWith(tpl, str);
         },
-        getFoot: function(s) {
-            var tpl = 'views/ui/*/foot.vm';
-            return this.replaceWith(tpl, s, '*');
+        getFoot: function(str, ext) {
+            var tpl = 'views/ui/*/foot' + ext;
+            return this.replaceWith(tpl, str);
         },
-        getLayout: function(s) {
-            var tpl = '%/views/templates/%/layout/%.vm';
-            return this.replaceWith(tpl, s, '%');
+        getLayout: function(str, ext) {
+            var tpl = '*/views/templates/*/layout/*.' + ext;
+            return this.replaceWith(tpl, str);
         }
     }
 };

@@ -11,8 +11,6 @@ var routes = require('./routes');
 var _ = require('lodash');
 
 var ui = require('./ui');
-var macros = require('./macros');
-//var staticDir = path.join(__dirname, 'public');
 
 var app = express();
 var velocity = config.viewEngine;
@@ -25,7 +23,6 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(app.router);
-
 // custom middleware
 app.set('views', path.join(__dirname, 'views/templates'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,8 +30,8 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-// 模板引擎使用vm
-app.engine('vm', function(path, options, func) {
+// template engine
+app.engine(config.tplExtension, function(path, options, func) {
     try {
         var filepath;
         var velocityForString;
@@ -42,10 +39,11 @@ app.engine('vm', function(path, options, func) {
         var module = uiConfig.module;
         var body = uiConfig.body;
         var layout = uiConfig.layout;
-        uiConfig.__head = ui.util.getHead(uiConfig.__head);
-        uiConfig.__screen = ui.util.getScreen([module, body]);
-        uiConfig.__foot = ui.util.getFoot(uiConfig.__foot);
-        filepath = ui.util.getLayout([cwd, module, layout]);
+        var macros = require('./macros');
+        uiConfig.__head = ui.util.getHead(uiConfig.__head, config.tplExtension);
+        uiConfig.__screen = ui.util.getScreen([module, body], config.tplExtension);
+        uiConfig.__foot = ui.util.getFoot(uiConfig.__foot, config.tplExtension);
+        filepath = ui.util.getLayout([cwd, module, layout], config.tplExtension);
         try {
             velocityForString = fs.readFileSync(filepath).toString();
             func(null, velocity.render(velocityForString, _.merge({ui: uiConfig}, options), macros));
