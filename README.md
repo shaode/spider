@@ -4,7 +4,7 @@
 
 ## 功能简介
 
-`front-native`是一个前端服务化的项目构建脚手架，它不包含任何前端ui库和组件，使用者可以按照个人喜好整合ui和组件等，将它下载到本地便于二次开发。
+spider 是一个前端服务化的项目构建脚手架，它不包含任何前端ui库和组件，使用者可以按照个人喜好整合ui和组件等，将它下载到本地便于二次开发。
 
 - 脚手架使用Express框架开发，安装部署十分简单
 
@@ -20,9 +20,9 @@
 
 ## 下载及使用
 
-1. 将项目克隆到本地：`git clone git@github.com:automatically/front-native.git`
+1. 将项目克隆到本地：`git clone git@github.com:automatically/spider.git`
 
-2. 切换到项目根目录下面，比如：`cd ~/front-native`依次执行
+2. 切换到项目根目录下面，比如：`cd ~/spider`依次执行
 
     `npm install` 安装项目所需要的插件
 
@@ -105,5 +105,5 @@
 
 ### 构建工具
 
-front-native使用[grunt](http://gruntjs.com)构建项目
+spider 使用[grunt](http://gruntjs.com)构建项目
 
