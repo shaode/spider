@@ -1,9 +1,9 @@
 // var sys = require('sys');
 
-var rf = require('fs');
-
+var fs = require('fs');
 var _ = require('lodash');
-
+var cwd = process.cwd();
+var config = require('./config');
 // default ui config
 var uiConfig = {
     css: '',
@@ -22,13 +22,13 @@ function inline(module, page) {
     var cssSource, jsSource;
     var path = 'views/ui/' + module + '/';
     try {
-        cssSource = rf.readFileSync(path + page + '.css', 'utf-8');
+        cssSource = fs.readFileSync(path + page + '.css', 'utf-8');
         embed['__style'] = cssSource;
     } catch(e) {
         embed['__style'] = '';
     }
     try {
-        jsSource = rf.readFileSync(path + page + '.js', 'utf-8');
+        jsSource = fs.readFileSync(path + page + '.js', 'utf-8');
         embed['__script'] = jsSource;
     } catch(e) {
         embed['__script'] = '';
@@ -63,7 +63,7 @@ function readJson(module) {
     var path = module === undefined ?
                 'views/ui/config' : 'views/ui/' + module;
     try {
-        source = rf.readFileSync(path + '/config.json','utf-8');
+        source = fs.readFileSync(path + '/config.json','utf-8');
         return JSON.parse( source );
     } catch(e) {
         return null;
@@ -197,7 +197,7 @@ function parseConfig(key) {
     return obj;
 }
 
-module.exports = {
+var UIObject = {
     config: function(path) {
         var key = getKey(path);
         if (key === undefined) return uiConfig;
@@ -212,6 +212,30 @@ module.exports = {
             layout: uiConfig.layout
         });
         return uiConfig;
+    },
+    templateEngineListen: function(path, options, func) {
+        try {
+            var filepath;
+            var velocityForString;
+            var uiConfig = UIObject.config(path);
+            var module = uiConfig.module;
+            var body = uiConfig.body;
+            var layout = uiConfig.layout;
+            var macros = require('./macros');
+            var velocity = config.template.engine;
+            uiConfig.__head = UIObject.util.getHead(uiConfig.__head, config.template.extension);
+            uiConfig.__screen = UIObject.util.getScreen([module, body], config.template.extension);
+            uiConfig.__foot = UIObject.util.getFoot(uiConfig.__foot, config.template.extension);
+            filepath = UIObject.util.getLayout([cwd, module, layout], config.template.extension);
+            try {
+                velocityForString = fs.readFileSync(filepath).toString();
+                func(null, velocity.render(velocityForString, _.merge({ ui: uiConfig }, options), macros));
+            } catch (e) {
+            }
+        } catch (err) {
+            console.log(err);
+            func(err);
+        }
     },
     util : {
         replaceWith: function(tpl, sub) {
@@ -252,3 +276,5 @@ module.exports = {
         }
     }
 };
+
+module.exports = UIObject;

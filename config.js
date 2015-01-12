@@ -4,12 +4,20 @@
  */
 var path = require('path');
 var pkg = require('./package.json');
+var _ = require('lodash');
 
 var config = {
     debug: true,
     name: 'front local development resources',
-    viewEngine: require('velocityjs'), // 模板引擎
-    tplExtension: 'vm', // 模板扩展名
+    template: {
+        engine:   require('velocityjs'), // 模板引擎
+        extension: 'vm',
+        callback: function() {
+            var fn = function() {};
+            var call = arguments[0];
+            return _.isFunction(call) ? call : fn;
+        }
+    },
     version: pkg.version,
 
     // site sittings
