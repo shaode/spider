@@ -1,18 +1,18 @@
 {
-  "name": "front-native",
-  "description": "Native Font Development...",
-  "version": "1.0.0",
-  "homepage": "https://github.com/automatically/front-native",
+  "name": "spider",
+  "description": "spider front native framework",
+  "version": "0.1.0",
+  "homepage": "https://github.com/araneid/spider",
   "author": {
     "name": "'ar.insect'",
     "email": "'603227937@qq.com'"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:automatically/front-native.git"
+    "url": "git@github.com:araneid/spider.git"
   },
   "bugs": {
-    "url": "https://github.com/automatically/front-native/issues"
+    "url": "https://github.com/araneid/spider/issues"
   },
   "licenses": [
     {
