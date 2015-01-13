@@ -227,7 +227,6 @@ var UIObject = {
             uiConfig.__screen = UIObject.util.getScreen([module, body], config.template.extension);
             uiConfig.__foot = UIObject.util.getFoot(uiConfig.__foot, config.template.extension);
             filepath = UIObject.util.getLayout([cwd, module, layout], config.template.extension);
-            console.log(uiConfig);
             try {
                 velocityForString = fs.readFileSync(filepath).toString();
                 func(null, velocity.render(velocityForString, _.merge({ ui: uiConfig }, options), macros));
