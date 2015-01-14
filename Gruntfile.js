@@ -2,8 +2,6 @@
 
 module.exports = function(grunt) {
 
-    var _ = grunt._;
-
 	var transport = require('grunt-cmd-transport');
 
 	var style = transport.style.init(grunt);
@@ -169,7 +167,6 @@ module.exports = function(grunt) {
 	        compress: {
 	             files: {
 	                 'assets/global/1.0.0/global.css': ['static/css/global/1.0.0/*.css'],
-	                 'assets/columnal/2.0/columnal.css': ['lib/columnal/code/css/columnal.css'],
                      'assets/foundation/5.5.0/foundation.css': ['lib/foundation/5.5.0/css/normalize.css', 'lib/foundation/5.5.0/css/foundation.css']
 	             }
 	        }
