@@ -209,7 +209,9 @@ var UIObject = {
             __foot: uiConfig.foot,
             module: getModule(key)[0],
             body: getModule(key)[1],
-            layout: uiConfig.layout
+            layout: uiConfig.layout,
+            keywords: config.keywords,
+            description: config.description
         });
         return uiConfig;
     },

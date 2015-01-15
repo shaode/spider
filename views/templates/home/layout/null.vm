@@ -1,3 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="$ui.charset" />
+        <meta name="keywords" content="$ui.keywords" />
+        <meta name="description" content="$ui.description" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>$ui.page.title</title>
+    	## 配置css
+        #SLITERAL($ui.css)
+        #SLITERAL($ui.page.css)
+    </head>
+    <!--[if lt IE 7]><body class="ie6"><![endif]-->
+    <!--[if IE 7]><body class="ie7"><![endif]-->
+    <!--[if IE 8]><body class="ie8"><![endif]-->
+    <!--[if IE 9]><body class="ie9"><![endif]-->
+    <!--[if !IE]><!--><body><!--<![endif]-->
 
+    #parse($!ui.__screen)
 
-#parse($!ui.__screen)
+    ## 配置js
+    #SLITERAL($ui.js)
+    #SLITERAL($ui.page.js)
+</body>
+</html>
