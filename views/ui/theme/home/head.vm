@@ -27,15 +27,6 @@
             </h1>
         </div>
 
-        <div id="navigation">
-            <div class="main-nav">
-                <ul>
-                    <li><a href="/" #if($!ui.module == "home")class="current"#end>首页</a></li>
-                    <li><a href="#">下载及使用</a></li>
-                    <li><a href="#">开发规范</a></li>
-                    <li><a href="#">Q&A</a></li>
-                </ul>
-            </div>
-        </div>
+        #cmsparse("component/nav.vm")
 
 <div id="content">

@@ -7,7 +7,7 @@ module.exports = {
     SLITERAL: function(str) {
         return str;
     },
-    cmsparse: function(str) {
+    cmsparse: function(file) {
         var template;
         try {
             template = fs.readFileSync(cwd + '/public/' + file).toString();
@@ -16,7 +16,7 @@ module.exports = {
             return '';
         }
     },
-    include: function(str) {
+    include: function(file) {
         var template;
         try {
             template = fs.readFileSync(cwd + '/views/' + file).toString();
