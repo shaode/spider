@@ -4,7 +4,9 @@
 </div><!-- end #content -->
 
 <div id="footer">
-    <p class="ft-12">有关于spider建议或者问题欢迎咨询@阿虫：<a href="mailto:603227937@qq.com">603227937@qq.com</a></p>
+    <div class="main-foot">
+        <p>有关于spider建议或者问题欢迎咨询@阿虫：<a href="mailto:603227937@qq.com">603227937@qq.com</a></p>
+    </div>
 </div>
 ## 配置js
 #SLITERAL($ui.js)

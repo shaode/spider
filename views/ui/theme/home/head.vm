@@ -22,18 +22,20 @@
     <div id="container">
 
         <div id="header">
-            <h1 class="ft-30 ft-bold" id="logo">
-                $!ui.page.logo -- 前端本地开发脚手架
+            <h1 id="logo">
+                <span class="ft-30 ft-bold">$!ui.page.logo</span> -- <span class="ft-14">前端本地开发脚手架</span>
             </h1>
         </div>
 
         <div id="navigation">
-            <ul>
-                <li><a href="/">首页</a></li>
-                <li><a href="#">下载及使用</a></li>
-                <li><a href="#">开发规范</a></li>
-                <li><a href="#">Q&A</a></li>
-            </ul>
+            <div class="main-nav">
+                <ul>
+                    <li><a href="/" #if($!ui.module == "home")class="current"#end>首页</a></li>
+                    <li><a href="#">下载及使用</a></li>
+                    <li><a href="#">开发规范</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul>
+            </div>
         </div>
 
 <div id="content">

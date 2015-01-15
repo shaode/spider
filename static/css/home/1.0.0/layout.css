@@ -1,18 +1,21 @@
 #container {
-    margin: 0 30px;
+    width: 100%;
 }
 
 #header {
     padding: 20px;
+    background: #fff;
 }
 
-#header h1 {
-    margin: 0;
+#logo {
+    width: 320px;
+    margin: 0 0 30px 160px;
 }
 
 #navigation {
-    float: left;
     width: 100%;
+    overflow: hidden;
+    height: 60px;
     background: #333;
 }
 
@@ -29,20 +32,30 @@
 #navigation li a {
     display: block;
     float: left;
-    padding: 5px 10px;
+    padding: 10px 20px;
+    height: 40px;
+    line-height: 40px;
     color: #fff;
+    font-weight: bold;
     text-decoration: none;
     border-right: 1px solid #fff;
 }
 
 #navigation li a:hover {
-    background: #383;
+    background: #666;
+}
+
+#navigation li a.current {
+    background: #666;
 }
 
 #content {
-    clear: left;
     padding: 30px 50px;
+    width: 1140px;
+    margin: 30px auto 0;
+    position: relative;
     background: #fff;
+    border: 1px solid #ccc;
 }
 
 #content h2 {
@@ -52,8 +65,18 @@
 }
 
 #footer {
-    background: #ccc;
-    text-align: right;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
     padding: 20px;
-    height: 1%;
+}
+
+.main-nav {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.main-foot {
+    width: 1000px;
+    margin: 0 auto;
 }
