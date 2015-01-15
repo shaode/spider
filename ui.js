@@ -48,7 +48,7 @@ function putOn(resource, type) {
     var str = '';
     if ('css' == type) {
         resource.forEach(function(item) {
-            str += '<link rel="stylesheet" src="/assets/' + item + '" />\n';
+            str += '<link rel="stylesheet" href="/assets/' + item + '" />\n';
         });
     } else if ('js' == type) {
         resource.forEach(function(item) {
@@ -213,6 +213,7 @@ var UIObject = {
             keywords: config.keywords,
             description: config.description
         });
+
         return uiConfig;
     },
     templateEngineListen: function(path, options, func) {

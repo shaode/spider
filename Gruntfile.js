@@ -160,13 +160,12 @@ module.exports = function(grunt) {
             minify: {
                 expand: true,
                 cwd: 'assets/',
-                src: ['select/**/*.css'],
+                src: ['select/**/*.css', 'global/**/*.css', 'home/**/*.css'],
                 dest: 'assets/',
                 ext: '.css'
             },
 	        compress: {
 	             files: {
-	                 'assets/global/1.0.0/global.css': ['static/css/global/1.0.0/*.css'],
                      'assets/foundation/5.5.0/foundation.css': ['lib/foundation/5.5.0/css/normalize.css', 'lib/foundation/5.5.0/css/foundation.css']
 	             }
 	        }
@@ -174,6 +173,8 @@ module.exports = function(grunt) {
         css_import: {
             compress: {
                 files: {
+                    'assets/global/1.0.0/index.css': ['static/css/global/1.0.0/index.css'],
+                    'assets/home/1.0.0/index.css': ['static/css/home/1.0.0/index.css'],
                     'assets/mytest/1.0.0/mytest.css': ['static/css/mytest/1.0.0/all_modules.css']
                 }
             }
@@ -266,6 +267,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
-	grunt.registerTask('default', ['copy', 'transport', 'concat', 'cssmin', 'css_import', 'uglify', 'clean', 'jshint' ]);
+	grunt.registerTask('default', ['copy', 'transport', 'concat',  'css_import', 'cssmin',  'uglify', 'clean', 'jshint' ]);
 
 };

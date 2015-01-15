@@ -2,24 +2,19 @@
     "default": {
         "css": [],
         "js": [],
-        "title": "front native framework home default....",
+        "title": "spider framework home default....",
         "head": "theme/home",
         "foot": "theme/home",
         "layout": "default",
-        "charset": "UTF-8",
-        "vars": {
-            "aaa": "aaaaaaaa"
-        }
+        "charset": "UTF-8"
     },
     "page": {
         "index": {
-            "css": [],
+            "css": ["home/1.0.0/index.css"],
             "js": [],
-            "title": "front native framework home index....",
-            "layout": "null",
+            "title": "Spider 前端本地开发脚手架",
             "vars": {
-                "aaa": "aaaa",
-                "bbb": "bbbb"
+                "logo": "Spider"
             }
         }
     }

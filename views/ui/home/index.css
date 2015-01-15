@@ -1,0 +1,19 @@
+
+.feature {
+    list-style-type: decimal ;
+    padding: 0 0 0 23px;
+}
+
+.feature li {
+    display: list-item;
+}
+
+.feature li p {
+    display: block;
+    margin: 1em;
+}
+
+.doll {
+    display: inline-block;
+    margin: 0 0 20px 20px;
+}
