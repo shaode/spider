@@ -42,11 +42,11 @@
 }
 
 #navigation li a:hover {
-    background: #666;
+    background: #CE303E;
 }
 
 #navigation li a.current {
-    background: #666;
+    background: #CE303E;
 }
 
 #content {
