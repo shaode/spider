@@ -187,11 +187,11 @@ function parseConfig(key) {
     }
 
     if (obj['page']['__style'].trim() !== '') {
-        obj['page']['__style'] = '<style>' + obj['page']['__style'] + '</style>';
+        obj['page']['__style'] = '<style>\n' + obj['page']['__style'] + '\n</style>';
     }
 
     if (obj['page']['__script'].trim() !== '') {
-        obj['page']['__script'] = '<script>' + obj['page']['__script'] + '</script>';
+        obj['page']['__script'] = '<script>\n' + obj['page']['__script'] + '\n</script>';
     }
 
     return obj;
