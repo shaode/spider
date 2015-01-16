@@ -36,15 +36,24 @@ module.exports = function(grunt) {
 					dest : 'assets'
 				}]
 			},
+            // 自定义插件，放在公共目录下面
+            select : {
+                files : [{
+                    expand : true,
+                    cwd : 'lib/',
+                    src : ['select/1.0.0/*'],
+                    dest : 'assets'
+                }]
+            },
+            highlight : {
+                files : [{
+                    expand : true,
+                    cwd : 'lib/',
+                    src : ['highlight/8.3/styles/*.css', 'highlight/8.3/highlight.pack.js'],
+                    dest : 'assets'
+                }]
+            },
 			// 自定义插件，放在公共目录下面
-			select : {
-				files : [{
-					expand : true,
-					cwd : 'lib/',
-					src : ['select/1.0.0/*'],
-					dest : 'assets'
-				}]
-			},
 			cellula : {
 				files : [{
 					expand : true,
@@ -89,18 +98,18 @@ module.exports = function(grunt) {
 				},
 				paths : ['assets']
 			},
-			select : {
-				options : {
-					idleading : 'select/1.0.0/'
-				},
-				files : [{
-					expand : true,
-					filter : 'isFile',
-					cwd : 'lib/select/1.0.0',
-					src : '*.js',
-					dest : 'assets/select/1.0.0'
-				}]
-			},
+            select : {
+                options : {
+                    idleading : 'select/1.0.0/'
+                },
+                files : [{
+                    expand : true,
+                    filter : 'isFile',
+                    cwd : 'lib/select/1.0.0',
+                    src : '*.js',
+                    dest : 'assets/select/1.0.0'
+                }]
+            },
 			cellula : {
 				options : {
 					idleading : 'cellula/0.4.2/'
