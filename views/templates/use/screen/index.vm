@@ -1,1 +1,9 @@
 <div>下载及使用。。。</div>
+
+
+<pre><code class="javascript hljs">
+var Hello = function() {
+    var s = '';
+};
+</code></pre>
+

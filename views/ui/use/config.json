@@ -9,7 +9,7 @@
     },
     "page": {
         "index": {
-            "css": ["highlight/8.3/styles/googlecode.css"],
+            "css": ["highlight/8.3/styles/github.css"],
             "js": ["highlight/8.3/highlight.pack.js"],
             "vars": {
 
