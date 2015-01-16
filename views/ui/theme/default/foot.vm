@@ -9,8 +9,7 @@
     </div>
 </div>
 ## 配置js
-#SLITERAL($ui.js)
-#SLITERAL($ui.page.js)
-#SLITERAL($ui.page.__script)
+#SLITERAL($!ui.js)
+#SLITERAL($!ui.__script)
 </body>
 </html>

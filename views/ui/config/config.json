@@ -6,6 +6,7 @@
     "vars": {
         "title": "Spider 前端本地开发脚手架",
         "charset": "UTF-8",
-        "contentType": "text/html"
+        "contentType": "text/html",
+        "logo": "Spider"
     }
 }

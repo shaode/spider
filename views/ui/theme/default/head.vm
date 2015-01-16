@@ -4,11 +4,11 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="$ui.charset" />
-        <meta name="keywords" content="$ui.keywords" />
-        <meta name="description" content="$ui.description" />
+        <meta charset="$!ui.charset" />
+        <meta name="keywords" content="$!ui.keywords" />
+        <meta name="description" content="$!ui.description" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>$ui.page.title</title>
+        <title>$!ui.title</title>
         ## seajs配置本地化
         <script charset="utf-8" src="/assets/sea.js"></script>
         <script charset="utf-8" src="/assets/seajs-style/1.0.2/seajs-style.js"></script>
@@ -26,9 +26,8 @@
         </script>
         <script src="/assets/$.js"></script>
     	## 配置css
-        #SLITERAL($ui.css)
-        #SLITERAL($ui.page.css)
-        #SLITERAL($ui.page.__style)
+        #SLITERAL($!ui.css)
+        #SLITERAL($!ui.__style)
     </head>
     <!--[if lt IE 7]><body class="ie6"><![endif]-->
     <!--[if IE 7]><body class="ie7"><![endif]-->
@@ -40,7 +39,7 @@
 
         <div id="header">
             <h1 id="logo">
-                <span class="ft-30 ft-bold">$!ui.page.logo</span> -- <span class="ft-14">前端本地开发脚手架</span>
+                <span class="ft-30 ft-bold">$!ui.logo</span> -- <span class="ft-14">前端本地开发脚手架</span>
             </h1>
         </div>
 

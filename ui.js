@@ -10,11 +10,10 @@ var uiConfig = {
     js: '',
     head: '',
     foot: '',
-    page: {
-        css: '',
-        js: '',
-        title: ''
-    }
+    title: '',
+    charset: '',
+    __style: '',
+    __script: ''
 };
 
 function inline(module, page) {
@@ -76,7 +75,7 @@ function getModule(key) {
 }
 
 function parseConfig(key) {
-    var obj;
+    var tempobj;
     var css, js;
     var i, j, k, tgc = {}, tc = {};
     var mp = getModule(key);
@@ -93,16 +92,13 @@ function parseConfig(key) {
                 }
                 continue;
             }
-            if ('css' == i || 'js' == i) {
-                tgc[i] = putOn(globalConfig[i], i);
-                continue;
-            }
             tgc[i] = globalConfig[i];
         }
     }
     if (config) {
         for (i in config) {
             if ('default' == i) {
+                // css, js, head, foot and other vars.
                 for (j in config[i]) {
                     if ('vars' == j) {
                         for (k in config[i][j]) {
@@ -114,58 +110,33 @@ function parseConfig(key) {
                 }
             }
             if ('page' == i) {
-                tc['page'] = {};
                 if (config[i][page]) {
                     // this page config
                     for (k in config[i][page]) {
-                        if ('head' == k || 'foot'== k) {
-                            // head and foot need rewrite
-                            if (config[i][page][k]) {
-                                tc[k] = config[i][page][k];
-                            }
-                            continue;
-                        }
-                        if ('title' == k ) {
-                            tc['page'][k] = config[i][page][k] ?
-                                                                config[i][page][k] :
-                                                                tc[k] ? tc[k] : tgc[k] ? tgc[k] : '';
-                            delete tc[k];
-                            delete tgc[k];
-                            continue;
-                        }
-                        if ('layout' == k) {
-                            tc[k] = config[i][page][k] ?
-                                config[i][page][k] :
-                                ( tc[k] ? tc[k] : (tgc[k] ? tgc[k]: '') );
-                            continue;
-                        }
-                        if ('vars' == k) {
-                            for (j in config[i][page][k]) {
-                                tc['page'][j] = config[i][page][k][j];
-                            }
-                            continue;
-                        }
                         if ('css' == k || 'js' == k) {
-                            //combo css & js
-                            if (tc[k] && config[i][page][k]) {
-                                tc['page'][k] = putOn(tc[k].concat( config[i][page][k] ), k);
-                                delete tc[k];
+                            // combo css & js
+                            if (tc[k]) {
+                                tc[k] = tc[k].concat( config[i][page][k] );
+                                //delete tc[k];
                                 continue;
                             }
                         }
-                        // other vars.
-                        tc['page'][k] = config[i][page][k];
+                        if ('vars' == k) {
+                            for (j in config[i][page][k]) {
+                                tc[j] = config[i][page][k][j];
+                            }
+                            continue;
+                        }
+                        // head, foot and other vars.
+                        tc[k] = config[i][page][k];
                     }
                 }
             }
         }
     }
-
-    _.merge( tc['page'], inline(module, page) );
-
-    if (!tc['page']['title']) {
-        tc['page']['title'] = tgc['title'] ? tgc['title'] : '';
-    }
+    // combo page inline css and js
+    // __style, __script
+    _.merge( tc, inline(module, page) );
 
     if (tc['css']) {
         tgc['css'] = tgc['css'].concat( tc['css'] );
@@ -177,29 +148,32 @@ function parseConfig(key) {
         delete tc['js'];
     }
 
-    obj = _.extend(tgc, tc);
+    tempobj = _.extend(tgc, tc);
 
-    if (!obj['layout']) {
-        obj['layout'] = 'default';
+    tempobj['js'] = tempobj['js'] ? putOn(tempobj['js'], 'js') : '';
+    tempobj['css'] = tempobj['css'] ? putOn(tempobj['css'], 'css') : '';
+
+    if (tempobj['__style'].trim() !== '') {
+        tempobj['__style'] = '<style>\n' + tempobj['__style'] + '\n</style>';
     }
 
-    if (!obj['head']) {
-        obj['head'] = 'theme/default';
+    if (tempobj['__script'].trim() !== '') {
+        tempobj['__script'] = '<script>\n' + tempobj['__script'] + '\n</script>';
     }
 
-    if (!obj['foot']) {
-        obj['foot'] = 'theme/default';
+    if (!tempobj['layout']) {
+        tempobj['layout'] = 'default';
     }
 
-    if (obj['page']['__style'].trim() !== '') {
-        obj['page']['__style'] = '<style>\n' + obj['page']['__style'] + '\n</style>';
+    if (!tempobj['head']) {
+        tempobj['head'] = 'theme/default';
     }
 
-    if (obj['page']['__script'].trim() !== '') {
-        obj['page']['__script'] = '<script>\n' + obj['page']['__script'] + '\n</script>';
+    if (!tempobj['foot']) {
+        tempobj['foot'] = 'theme/default';
     }
 
-    return obj;
+    return tempobj;
 }
 
 var UIObject = {
@@ -218,7 +192,7 @@ var UIObject = {
             keywords: config.keywords,
             description: config.description
         });
-
+        console.log(uiConfig);
         return uiConfig;
     },
     templateEngineListen: function(path, options, func) {
@@ -237,6 +211,8 @@ var UIObject = {
             filepath = UIObject.util.getLayout([cwd, module, layout], config.template.extension);
             try {
                 velocityForString = fs.readFileSync(filepath).toString();
+                var o = _.merge({ ui: uiConfig }, options);
+                //console.log('---' + o.ui.__head + '---');
                 func(null, velocity.render(velocityForString, _.merge({ ui: uiConfig }, options), macros));
             } catch (e) {
             }

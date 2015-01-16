@@ -3,15 +3,14 @@
         "css": [],
         "js": [],
         "head": "theme/home",
-        "foot": "theme/home",
-        "charset": "UTF-8"
+        "foot": "theme/home"
     },
     "page": {
         "index": {
             "css": [],
             "js": [],
             "vars": {
-                "logo": "Spider"
+                "charset": "UTF-8"
             }
         }
     }
