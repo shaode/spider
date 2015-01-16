@@ -1,9 +1,10 @@
 {
     "css": ["global/1.0.0/index.css"],
     "js": ["common/1.0.0/common.js"],
-    "layout": "default",
+    "head": "theme/default",
+    "foot": "theme/default",
     "vars": {
-        "title": "spider framework",
+        "title": "Spider 前端本地开发脚手架",
         "charset": "UTF-8",
         "contentType": "text/html"
     }

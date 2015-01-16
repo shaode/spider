@@ -128,8 +128,9 @@ function parseConfig(key) {
                         if ('title' == k ) {
                             tc['page'][k] = config[i][page][k] ?
                                                                 config[i][page][k] :
-                                                                ( tc[k] ? tc[k] : (tgc[k] ? tgc[k]: '') );
-                            delete tc[k] && delete tgc[k];
+                                                                tc[k] ? tc[k] : tgc[k] ? tgc[k] : '';
+                            delete tc[k];
+                            delete tgc[k];
                             continue;
                         }
                         if ('layout' == k) {
@@ -161,6 +162,10 @@ function parseConfig(key) {
     }
 
     _.merge( tc['page'], inline(module, page) );
+
+    if (!tc['page']['title']) {
+        tc['page']['title'] = tgc['title'] ? tgc['title'] : '';
+    }
 
     if (tc['css']) {
         tgc['css'] = tgc['css'].concat( tc['css'] );

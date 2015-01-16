@@ -1,13 +1,16 @@
 #*
 @description: 默认页脚
 *#
+</div><!-- end #content -->
 
-<b>这是框架默认的页脚</b>
-
-##配置js
+<div id="footer">
+    <div class="main-foot">
+        <p>有关于spider建议或者问题欢迎咨询@阿虫：<a href="mailto:603227937@qq.com">603227937@qq.com</a></p>
+    </div>
+</div>
+## 配置js
 #SLITERAL($ui.js)
 #SLITERAL($ui.page.js)
 #SLITERAL($ui.page.__script)
-
 </body>
 </html>

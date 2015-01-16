@@ -1,0 +1,18 @@
+{
+    "default": {
+        "css": [],
+        "js": [],
+        "title": "下载及使用",
+        "charset": "UTF-8"
+    },
+    "page": {
+        "index": {
+            "css": ["highlight/8.3/styles/googlecode.css"],
+            "js": ["highlight/8.3/highlight.pack.js"],
+            "title": "下载及使用",
+            "vars": {
+
+            }
+        }
+    }
+}
