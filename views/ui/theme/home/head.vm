@@ -13,6 +13,7 @@
         #SLITERAL($ui.css)
         #SLITERAL($ui.page.css)
         #SLITERAL($ui.page.__style)
+        <script src="/assets/$.js" charset="utf-8"></script>
     </head>
     <!--[if lt IE 7]><body class="ie6"><![endif]-->
     <!--[if IE 7]><body class="ie7"><![endif]-->
