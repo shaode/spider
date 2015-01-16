@@ -192,7 +192,6 @@ var UIObject = {
             keywords: config.keywords,
             description: config.description
         });
-        console.log(uiConfig);
         return uiConfig;
     },
     templateEngineListen: function(path, options, func) {
@@ -212,7 +211,6 @@ var UIObject = {
             try {
                 velocityForString = fs.readFileSync(filepath).toString();
                 var o = _.merge({ ui: uiConfig }, options);
-                //console.log('---' + o.ui.__head + '---');
                 func(null, velocity.render(velocityForString, _.merge({ ui: uiConfig }, options), macros));
             } catch (e) {
             }
