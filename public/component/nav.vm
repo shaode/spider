@@ -1,10 +1,8 @@
-<div id="navigation">
-    <div class="main-nav">
-        <ul>
-            <li><a href="/" #if($!ui.module == "home")class="current"#end>首页</a></li>
-            <li><a href="/use/" #if($!ui.module == "use")class="current"#end>下载及使用</a></li>
-            <li><a href="#">开发规范</a></li>
-            <li><a href="#">Q&A</a></li>
-        </ul>
-    </div>
+<div class="large-9 columns">
+      <ul class="button-group round right">
+        <li><a href="/"class="button #if($!ui.module == "home")alert#end">首页</a></li>
+        <li><a href="/use/" class="button #if($!ui.module == "use")alert#end">下载及使用</a></li>
+        <li><a href="#" class="button">开发及构建</a></li>
+        <li><a href="#" class="button">问与答</a></li>
+      </ul>
 </div>

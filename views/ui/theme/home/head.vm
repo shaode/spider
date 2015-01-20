@@ -1,32 +1,25 @@
 #*
-@description: HOME自定义头部
-*#
+ * @description: HOME自定义头部
+ *#
 <!doctype html>
-<html>
+<!--[if IE 9]><html class="lt-ie10" lang="zh"><![endif]-->
+<html class="no-js" lang="zh">
     <head>
         <meta charset="$ui.charset" />
-        <meta name="keywords" content="$!ui.keywords" />
-        <meta name="description" content="$!ui.description" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- If you delete this meta tag World War Z will become a reality -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>$!ui.title</title>
     	## 配置css
         #SLITERAL($ui.css)
         #SLITERAL($ui.__style)
         <script src="/assets/$.js" charset="utf-8"></script>
     </head>
-    <!--[if lt IE 7]><body class="ie6"><![endif]-->
-    <!--[if IE 7]><body class="ie7"><![endif]-->
-    <!--[if IE 8]><body class="ie8"><![endif]-->
-    <!--[if IE 9]><body class="ie9"><![endif]-->
-    <!--[if !IE]><!--><body><!--<![endif]-->
-    <div id="container">
-
-        <div id="header">
-            <h1 id="logo">
-                <span class="ft-30 ft-bold">$!ui.logo</span> -- <span class="ft-14">前端本地开发脚手架</span>
-            </h1>
+    <body>
+<!-- Header and Nav -->
+      <div class="row">
+        <div class="large-3 columns">
+          <h1>spider</h1>
         </div>
-
         #cmsparse("component/nav.vm")
-
-<div id="content">
+      </div>
+<!-- End Header and Nav -->

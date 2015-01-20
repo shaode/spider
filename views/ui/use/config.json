@@ -1,10 +1,9 @@
 {
     "default": {
-        "css": [],
-        "js": [],
+        "css": ["foundation/5.5.0/foundation.css"],
+        "js": ["foundation/5.5.0/foundation.js"],
         "vars": {
-            "title": "下载及使用",
-            "charset": "UTF-8"
+            "title": "下载及使用"
         }
     },
     "page": {

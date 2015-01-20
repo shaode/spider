@@ -1,16 +1,17 @@
 {
     "default": {
-        "css": [],
-        "js": [],
+        "css": ["foundation/5.5.0/foundation.css"],
+        "js": ["foundation/5.5.0/foundation.js"],
         "head": "theme/home",
-        "foot": "theme/home"
+        "foot": "theme/home",
+        "title": "首页"
     },
     "page": {
         "index": {
             "css": [],
             "js": [],
             "vars": {
-                "charset": "UTF-8"
+
             }
         }
     }

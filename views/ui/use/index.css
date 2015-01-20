@@ -1,14 +1,14 @@
 
-.feature {
+.step-by-step {
     list-style-type: decimal ;
     padding: 0 0 0 24px;
 }
 
-.feature li {
+.step-by-step li {
     display: list-item;
 }
 
-.feature li p {
+.step-by-step li p {
     display: block;
     margin: 1em;
 }
