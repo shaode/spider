@@ -2,13 +2,13 @@
  * use && downlaod
  */
 exports.index = function(req, res) {
-    res.render('use/screen/index.vm', {
+    res.render('use/index', {
         hello: '这是mockdata数据。。。'
     });
 };
 
 exports.demo = function(req, res) {
-    res.render('use/screen/demo/index.vm', {
+    res.render('use/demo/index', {
         hello: '这是案例演示。。。'
     });
 };

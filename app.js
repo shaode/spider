@@ -20,14 +20,28 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
+// customer middleware filter view
+app.use(function(req, res, next) {
+    var _render = res.render;
+    res.render = function(view, options, callback) {
+        var s = view.replace(/[\/\\]/g, '/');
+        var pre = s.substring(0,s.indexOf('/'));
+        var end = s.substring(s.indexOf('/'));
+        view = pre + '/screen' + end + '.' + config.template.extension;
+        _render.call(res, view, options, callback);
+    };
+    next();
+});
 app.use(app.router);
+// controllers
+routes(app);
 // custom middleware
 app.set('views', path.join(__dirname, 'views/templates'));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'assets')));
+//app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use(express.static(path.join(__dirname, 'images')));
+//app.use(express.static(path.join(__dirname, 'images')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 // template engine
 app.engine( config.template.extension, config.template.callback(ui.templateEngineListen) );
@@ -35,11 +49,6 @@ app.engine( config.template.extension, config.template.callback(ui.templateEngin
 app.set('port', process.env.PORT || 3000);
 var port = process.argv[2];
 port = /^\d{4,5}$/.test(port) ? port : app.get('port');
-// console.log('Listening on', port);
-
-// controllers
-routes(app);
-
 http.createServer(app).listen(port, function() {
     console.log('Server listening on port ' + port);
 })

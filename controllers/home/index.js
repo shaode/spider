@@ -3,7 +3,7 @@
  */
 
 exports.index = function(req, res) {
-    res.render('home/screen/index.vm', {
+    res.render('home/index', {
         hello: '这是mockdata数据。。。'
     });
 };
