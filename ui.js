@@ -71,7 +71,7 @@ function readJson(module) {
 }
 
 function getModule(key) {
-    return key ? key.split(',') : [];
+    return key ? key.replace(/[\\]/g, '/').split(',') : [];
 }
 
 function parseConfig(key) {

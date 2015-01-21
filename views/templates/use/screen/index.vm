@@ -39,6 +39,8 @@
         每次对项目中的js&css 改动都需要手动执行grunt native或者在命令行执行grunt watch则会在后台监控，一旦代码改动就会自动部署，推荐这种方式
 
         修改controllers下面的js文件需要重启node服务node app.js
+
+        <a href="/use/demo">点击查看案例演示</a>
     </div>
 </div>
 
