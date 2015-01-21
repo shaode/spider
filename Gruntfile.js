@@ -149,6 +149,7 @@ module.exports = function(grunt) {
             /*
              * 业务层
              */
+            /*
 			mytest: {
 				options : {
 					idleading : 'mytest/1.0.0/'
@@ -161,6 +162,7 @@ module.exports = function(grunt) {
 					dest : 'assets/mytest/1.0.0'
 				}]
 			}
+			*/
 		},
 		cssmin: {
             options: {
@@ -223,7 +225,7 @@ module.exports = function(grunt) {
                 files : [{
                     expand : true,
                     cwd : 'assets/',
-                    src : ['$.js', 'select/**/*.js', 'cellula/**/*.js', 'fdp/**/*.js', 'foundation/5.5.0/foundation.js', 'common/**/*.js', 'mytest/**/*.js'],
+                    src : ['$.js', 'select/**/*.js', 'cellula/**/*.js', 'fdp/**/*.js', 'foundation/5.5.0/foundation.js', 'common/**/*.js'],
                     dest : 'assets/'
                 }]
             }
