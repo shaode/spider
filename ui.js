@@ -197,7 +197,8 @@ var UIObject = {
     templateEngineListen: function(path, options, func) {
         try {
             var filepath;
-            var velocityForString;
+            var vmString;
+            var glue;
             var uiConfig = UIObject.config(path);
             var module = uiConfig.module;
             var body = uiConfig.body;
@@ -209,9 +210,10 @@ var UIObject = {
             uiConfig.__foot = UIObject.util.getFoot(uiConfig.__foot, config.template.extension);
             filepath = UIObject.util.getLayout([cwd, module, layout], config.template.extension);
             try {
-                velocityForString = fs.readFileSync(filepath).toString();
-                var o = _.merge({ ui: uiConfig }, options);
-                func(null, velocity.render(velocityForString, _.merge({ ui: uiConfig }, options), macros));
+                glue = _.merge({ ui: uiConfig }, options);
+                vmString = fs.readFileSync(filepath).toString();
+                uiConfig.__script =  velocity.render(uiConfig.__script, glue);
+                func(null, velocity.render(vmString, glue, macros));
             } catch (e) {
             }
         } catch (err) {

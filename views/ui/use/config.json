@@ -18,7 +18,8 @@
             "css": [],
             "js": [],
             "vars": {
-                "title": "案例演示"
+                "title": "案例演示",
+                "isTrue": true
             }
         }
 
