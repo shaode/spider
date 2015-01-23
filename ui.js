@@ -45,11 +45,11 @@ function getKey(path) {
 
 function putOn(resource, type) {
     var str = '';
-    if ('css' == type) {
+    if ('css' === type) {
         resource.forEach(function(item) {
             str += '<link rel="stylesheet" href="/assets/' + item + '" />\n';
         });
-    } else if ('js' == type) {
+    } else if ('js' === type) {
         resource.forEach(function(item) {
             str += '<script src="/assets/' + item + '"></script>\n';
         });
@@ -86,7 +86,7 @@ function parseConfig(key) {
     config = readJson(module);
     if (globalConfig) {
         for (i in globalConfig) {
-            if ('vars' == i) {
+            if ('vars' === i) {
                 for (j in globalConfig[i]) {
                     tgc[j] = globalConfig[i][j];
                 }
@@ -97,10 +97,10 @@ function parseConfig(key) {
     }
     if (config) {
         for (i in config) {
-            if ('default' == i) {
+            if ('default' === i) {
                 // css, js, head, foot and other vars.
                 for (j in config[i]) {
-                    if ('vars' == j) {
+                    if ('vars' === j) {
                         for (k in config[i][j]) {
                              tc[k] = config[i][j][k];
                         }
@@ -109,11 +109,11 @@ function parseConfig(key) {
                     tc[j] = config[i][j];
                 }
             }
-            if ('page' == i) {
+            if ('page' === i) {
                 if (config[i][page]) {
                     // this page config
                     for (k in config[i][page]) {
-                        if ('css' == k || 'js' == k) {
+                        if ('css' === k || 'js' === k) {
                             // combo css & js
                             if (tc[k]) {
                                 tc[k] = tc[k].concat( config[i][page][k] );
@@ -121,7 +121,7 @@ function parseConfig(key) {
                                 continue;
                             }
                         }
-                        if ('vars' == k) {
+                        if ('vars' === k) {
                             for (j in config[i][page][k]) {
                                 tc[j] = config[i][page][k][j];
                             }
