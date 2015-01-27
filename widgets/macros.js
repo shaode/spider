@@ -1,6 +1,5 @@
 var fs = require('fs');
 var cwd = process.cwd();
-
 var _ = require('lodash');
 
 module.exports = {
