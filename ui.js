@@ -184,33 +184,6 @@ var UIObject = {
         });
         return uiConfig;
     },
-    templateEngineListen: function(path, options, func) {
-        try {
-            var filepath;
-            var vmString;
-            var glue;
-            var uiConfig = UIObject.config(path);
-            var module = uiConfig.module;
-            var body = uiConfig.body;
-            var layout = uiConfig.layout;
-            var macros = require('./widgets/macros');
-            var velocity = config.template.engine;
-            uiConfig.__head = UIObject.util.getHead(uiConfig.__head, config.template.extension);
-            uiConfig.__screen = UIObject.util.getScreen([module, body], config.template.extension);
-            uiConfig.__foot = UIObject.util.getFoot(uiConfig.__foot, config.template.extension);
-            filepath = UIObject.util.getLayout([cwd, module, layout], config.template.extension);
-            try {
-                glue = _.merge({ ui: uiConfig }, options);
-                vmString = fs.readFileSync(filepath).toString();
-                uiConfig.__script =  velocity.render(uiConfig.__script, glue);
-                func(null, velocity.render(vmString, glue, macros));
-            } catch (e) {
-            }
-        } catch (err) {
-            console.log(err);
-            func(err);
-        }
-    },
     util : {
         replaceWith: function(tpl, sub) {
             var i = 0;
