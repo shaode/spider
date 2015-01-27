@@ -8,7 +8,17 @@ var _ = require('lodash');
 
 var config = {
     debug: true,
-    name: 'front local development resources',
+    name: 'sprider development resources',
+    ui: {
+        css: '',
+        js: '',
+        head: '',
+        foot: '',
+        title: '',
+        charset: '',
+        __style: '',
+        __script: ''
+    },
     template: {
         engine:   require('velocityjs'), // 模板引擎
         extension: 'vm',
@@ -19,7 +29,6 @@ var config = {
         }
     },
     version: pkg.version,
-
     // site sittings
     host: 'localhost',
     assetsServer: '', // 静态文件存储域名
@@ -27,7 +36,6 @@ var config = {
     keywords: 'front local development resources..',
     description: 'front local development resources',
     port: 3000
-
 };
 
 module.exports = config;

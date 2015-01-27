@@ -1,20 +1,10 @@
 // var sys = require('sys');
-
 var fs = require('fs');
 var _ = require('lodash');
 var cwd = process.cwd();
 var config = require('./config');
 // default ui config
-var uiConfig = {
-    css: '',
-    js: '',
-    head: '',
-    foot: '',
-    title: '',
-    charset: '',
-    __style: '',
-    __script: ''
-};
+var uiConfig = config.ui;
 
 function inline(module, page) {
     var embed = {};
