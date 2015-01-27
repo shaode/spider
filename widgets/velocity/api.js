@@ -1,11 +1,12 @@
-
 var config = require('../../config');
 var macros = require('./macros');
 var ui = require('../../ui');
 var cwd = process.cwd();
 var fs = require('fs');
 var _ = require('lodash');
-
+/*
+ * @description 模板引擎回调
+ */
 module.exports = function(path, options, func) {
     try {
         var filepath;
