@@ -20,6 +20,7 @@ var config = {
         __script: ''
     },
     template: {
+        name: 'velocity',
         engine: require('velocityjs'), // 模板引擎
         extension: 'vm',
         callback: function() {

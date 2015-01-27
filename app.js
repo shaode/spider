@@ -30,8 +30,8 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 routes( app );
 // template engine
-var velocityjs = require('./widgets/velocity/api');
-app.engine( config.template.extension, config.template.callback(velocityjs) );
+var templateEngine = require('./widgets/' + config.template.name + '/api');
+app.engine( config.template.extension, config.template.callback(templateEngine) );
 // set port
 app.set('port', process.env.PORT || 3000);
 var port = process.argv[2];
