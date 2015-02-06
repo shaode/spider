@@ -20,13 +20,14 @@ module.exports = function(path, options, func) {
         uiConfig.__head = ui.util.getHead(uiConfig.__head, config.template.extension);
         uiConfig.__screen = ui.util.getScreen([module, body], config.template.extension);
         uiConfig.__foot = ui.util.getFoot(uiConfig.__foot, config.template.extension);
+        glue = _.merge({ ui: uiConfig }, options);
+        uiConfig.__script = velocity.render(uiConfig.__script, glue);
         filepath = ui.util.getLayout([cwd, module, layout], config.template.extension);
         try {
-            glue = _.merge({ ui: uiConfig }, options);
             vmString = fs.readFileSync(filepath).toString();
-            uiConfig.__script = velocity.render(uiConfig.__script, glue);
             func(null, velocity.render(vmString, glue, macros));
         } catch (e) {
+            // 异常错误
         }
     } catch (err) {
         console.log(err);

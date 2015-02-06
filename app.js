@@ -10,6 +10,7 @@ var routes = require('./routes');
 var _ = require('lodash');
 var ui = require('./ui');
 var viewsWares = require('./middlewares/views');
+var errorhandler = require('errorhandler');
 // application
 var app = express();
 // set template's path
@@ -22,12 +23,20 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
-// rewrite res.render
-app.use(viewsWares.render);
-app.use(app.router);
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
+// rewrite res.render
+app.use(viewsWares.render);
+app.use(app.router);
+// error handler
+if (config.debug) {
+    app.use(errorhandler());
+} else {
+    app.use(function (err, req, res, next) {
+        return res.status(500).send('500 status');
+    });
+}
 routes( app );
 // template engine
 var templateEngine = require('./widgets/' + config.template.name + '/api');

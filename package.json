@@ -51,7 +51,8 @@
       "jade": "*",
       "lodash": "^2.4.1",
       "velocity": "0.7.1",
-      "velocityjs": "0.4.6"
+      "velocityjs": "0.4.6",
+      "errorhandler": "1.2.2"
   },
   "keywords": []
 }
