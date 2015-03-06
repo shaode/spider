@@ -31,7 +31,7 @@ var config = {
     },
     version: pkg.version,
     // site sittings
-    host: 'localhost',
+    host: '10.63.73.38',
     assetsServer: '', // 静态文件存储域名
     charset: 'GB2312',
     keywords: 'front local development resources..',

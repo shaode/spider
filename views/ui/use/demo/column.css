@@ -1,0 +1,376 @@
+
+html, body {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 100%;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    position: relative;
+    cursor: auto;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.hide {
+    display: none !important;
+    visibility: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+textarea {
+    height: auto;
+    min-height: 50px;
+}
+
+select {
+    width: 100%;
+}
+
+/* Label Styles */
+label {
+    font-size: 0.875rem;
+    color: #4d4d4d;
+    cursor: pointer;
+    display: block;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 0;
+    /* Styles for required inputs */
+}
+
+label.right {
+    float: none !important;
+    text-align: right;
+}
+
+label.inline {
+    margin: 0 0 1rem 0;
+    padding: 0.5625rem 0;
+}
+
+label small {
+    text-transform: capitalize;
+    color: #676767;
+}
+
+p {
+    line-height: 2em;
+}
+
+.icon-bar {
+    width: 100%;
+    font-size: 0;
+    display: inline-block;
+    background: #333;
+}
+
+.icon-bar > * {
+    text-align: center;
+    font-size: 1rem;
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    padding: 1.25rem;
+    float: left;
+}
+
+.icon-bar > * i, .icon-bar > * img {
+    display: block;
+    margin: 0 auto;
+}
+
+.icon-bar > * i + label, .icon-bar > * img + label {
+    margin-top: .0625rem;
+}
+
+.icon-bar > * i {
+    font-size: 1.875rem;
+    vertical-align: middle;
+}
+
+.icon-bar > * img {
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.icon-bar.label-right > * i, .icon-bar.label-right > * img {
+    margin: 0 .0625rem 0 0;
+    display: inline-block;
+}
+
+.icon-bar.label-right > * i + label, .icon-bar.label-right > * img + label {
+    margin-top: 0;
+}
+
+.icon-bar.label-right > * label {
+    display: inline-block;
+}
+
+.icon-bar.vertical.label-right > * {
+    text-align: left;
+}
+
+.icon-bar.vertical, .icon-bar.small-vertical {
+    height: 100%;
+    width: auto;
+}
+
+.icon-bar.vertical .item, .icon-bar.small-vertical .item {
+    width: auto;
+    margin: auto;
+    float: none;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .icon-bar.medium-vertical {
+        height: 100%;
+        width: auto;
+    }
+
+    .icon-bar.medium-vertical .item {
+        width: auto;
+        margin: auto;
+        float: none;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .icon-bar.large-vertical {
+        height: 100%;
+        width: auto;
+    }
+
+    .icon-bar.large-vertical .item {
+        width: auto;
+        margin: auto;
+        float: none;
+    }
+}
+
+.icon-bar > * {
+    font-size: 1rem;
+    padding: 1.25rem;
+}
+
+.icon-bar > * i + label, .icon-bar > * img + label {
+    margin-top: .0625rem;
+}
+
+.icon-bar > * i {
+    font-size: 1.875rem;
+}
+
+.icon-bar > * img {
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.icon-bar > * label {
+    color: #FFFFFF;
+}
+
+.icon-bar > * i {
+    color: #FFFFFF;
+}
+
+.icon-bar > a:hover {
+    background: #008CBA;
+}
+
+.icon-bar > a:hover label {
+    color: #FFFFFF;
+}
+
+.icon-bar > a:hover i {
+    color: #FFFFFF;
+}
+
+.icon-bar > a.active {
+    background: #008CBA;
+}
+
+.icon-bar > a.active label {
+    color: #FFFFFF;
+}
+
+.icon-bar > a.active i {
+    color: #FFFFFF;
+}
+
+.icon-bar.two-up .item {
+    width: 50%;
+}
+
+.icon-bar.two-up.vertical .item, .icon-bar.two-up.small-vertical .item {
+    width: auto;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .icon-bar.two-up.medium-vertical .item {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .icon-bar.two-up.large-vertical .item {
+        width: auto;
+    }
+}
+
+.icon-bar.three-up .item {
+    width: 33.3333%;
+}
+
+.icon-bar.three-up.vertical .item, .icon-bar.three-up.small-vertical .item {
+    width: auto;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .icon-bar.three-up.medium-vertical .item {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .icon-bar.three-up.large-vertical .item {
+        width: auto;
+    }
+}
+
+.icon-bar.four-up .item {
+    width: 25%;
+}
+
+.icon-bar.four-up.vertical .item, .icon-bar.four-up.small-vertical .item {
+    width: auto;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .icon-bar.four-up.medium-vertical .item {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .icon-bar.four-up.large-vertical .item {
+        width: auto;
+    }
+}
+
+.icon-bar.five-up .item {
+    width: 20%;
+}
+
+.icon-bar.five-up.vertical .item, .icon-bar.five-up.small-vertical .item {
+    width: auto;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .icon-bar.five-up.medium-vertical .item {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .icon-bar.five-up.large-vertical .item {
+        width: auto;
+    }
+}
+
+.icon-bar.six-up .item {
+    width: 16.66667%;
+}
+
+.icon-bar.six-up.vertical .item, .icon-bar.six-up.small-vertical .item {
+    width: auto;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .icon-bar.six-up.medium-vertical .item {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .icon-bar.six-up.large-vertical .item {
+        width: auto;
+    }
+}
+
+#toolbar {
+    position: fixed;
+    top: 0;
+
+}
+
+#removable-icon {
+    width: 64px;
+    height: 64px;
+    background: url("../../../images/cm-icon.png") no-repeat;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    overflow: hidden;
+    outline: 0;
+}

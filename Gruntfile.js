@@ -260,6 +260,16 @@ module.exports = function(grunt) {
                     'assets/fdp/1.1.0/fdp.js': ['assets/fdp/1.1.0/*.js']
                 }
             },
+            column: {
+                options : {
+                    noncmd: true
+                },
+                files: {
+                    'assets/column/1.0.0/column.js': [
+                        'static/js/column/1.0.0/column.js'
+                    ]
+                }
+            },
             foundation : {
                 options : {
                     noncmd: true
@@ -379,7 +389,7 @@ module.exports = function(grunt) {
         bootstrapGenerateCommonJSModule(grunt, srcFiles, destFilepath);
     });
     // other js
-    grunt.registerTask('other-dist-js', ['concat:cellula', 'concat:fdp', 'uglify:compress']);
+    grunt.registerTask('other-dist-js', ['concat:cellula', 'concat:fdp', 'concat:column', 'uglify:compress']);
     // foundation css
     grunt.registerTask('foundation-dist-css', ['csscomb:foundation', 'cssmin:foundation']);
     // bootstrap css

@@ -13,6 +13,8 @@ module.exports = function(app) {
     app.get('/use/', use.index);
     // demo
     app.get('/use/demo', use.demo);
+
+    app.get('/use/demo/column', use.column);
     // 404 page warn: must in the last
     app.get('*', function(req, res) {
         res.render('home/404', {

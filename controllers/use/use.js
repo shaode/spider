@@ -9,6 +9,12 @@ exports.index = function(req, res) {
 
 exports.demo = function(req, res) {
     res.render('use/demo/index', {
-        hello: '这是案例演示。。。'
+
+    });
+};
+
+exports.column = function(req, res) {
+    res.render('use/demo/column', {
+
     });
 };
