@@ -194,7 +194,8 @@ module.exports = function(grunt) {
         css_import: {
             compress: {
                 files: {
-                    'assets/global/1.0.0/index.css': ['static/css/global/1.0.0/index.css']
+                    'assets/global/1.0.0/index.css': ['static/css/global/1.0.0/index.css'],
+
                 }
             }
         },
@@ -211,7 +212,15 @@ module.exports = function(grunt) {
             },
             compress: {
                 files: {
-                    //'assets/foundation/5.5.0/foundation.css': ['lib/foundation/5.5.0/css/normalize.css', 'lib/foundation/5.5.0/css/foundation.css']
+                    'assets/gmu/2.1.0/gmu.css': [
+                        'lib/gmu/assets/reset.css',
+                        'lib/gmu/assets/widget/toolbar/toolbar.css',
+                        'lib/gmu/assets/widget/toolbar/toolbar.default.css',
+                        'lib/gmu/assets/widget/popover/popover.css',
+                        'lib/gmu/assets/widget/popover/popover.default.css',
+                        'lib/gmu/assets/widget/button/button.css',
+                        'lib/gmu/assets/widget/button/button.default.css'
+                    ]
                 }
             },
             foundation: {
@@ -258,6 +267,34 @@ module.exports = function(grunt) {
             fdp : {
                 files : {
                     'assets/fdp/1.1.0/fdp.js': ['assets/fdp/1.1.0/*.js']
+                }
+            },
+            gmu: {
+                options : {
+                    noncmd: true
+                },
+                files: {
+                    'assets/gmu/2.1.0/gmu.js': [
+                        'lib/gmu/dist/zepto.js',
+                        'lib/gmu/src/extend/touch.js',
+                        'lib/gmu/src/extend/offset.js',
+                        'lib/gmu/src/extend/parseTpl.js',
+                        'lib/gmu/src/extend/fix.js',
+                        'lib/gmu/src/core/gmu.js',
+                        'lib/gmu/src/core/event.js',
+                        'lib/gmu/src/core/widget.js',
+                        'lib/gmu/src/widget/popover/popover.js',
+                        'lib/gmu/src/widget/popover/placement.js',
+                        'lib/gmu/src/widget/popover/arrow.js',
+                        'lib/gmu/src/widget/popover/collision.js',
+                        'lib/gmu/src/widget/popover/dismissible.js',
+                        'lib/gmu/src/widget/toolbar/toolbar.js',
+                        'lib/gmu/src/widget/toolbar/$position.js',
+                        'lib/gmu/src/extend/throttle.js',
+                        'lib/gmu/src/extend/event.scrollStop.js',
+                        'lib/gmu/src/extend/highlight.js',
+                        'lib/gmu/src/widget/button/button.js'
+                    ]
                 }
             },
             column: {
@@ -389,7 +426,7 @@ module.exports = function(grunt) {
         bootstrapGenerateCommonJSModule(grunt, srcFiles, destFilepath);
     });
     // other js
-    grunt.registerTask('other-dist-js', ['concat:cellula', 'concat:fdp', 'concat:column', 'uglify:compress']);
+    grunt.registerTask('other-dist-js', ['concat:cellula', 'concat:fdp', 'concat:column', 'concat:gmu', 'uglify:compress']);
     // foundation css
     grunt.registerTask('foundation-dist-css', ['csscomb:foundation', 'cssmin:foundation']);
     // bootstrap css

@@ -5,31 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>$!ui.title</title>
     	## 配置css
-        <!--demo展示所用css，不用关心 begin-->
-        <link rel="stylesheet" type="text/css" href="/assets/gmu/assets/reset.css" />
-        <!--demo展示所用css end-->
-        <!--组件依赖css begin-->
-        <link rel="stylesheet" type="text/css" href="/assets/gmu/assets/widget/toolbar/toolbar.css" />
-        <link rel="stylesheet" type="text/css" href="/assets/gmu/assets/widget/toolbar/toolbar.default.css" /> <!--皮肤文件，若不使用该皮肤，可以不加载-->
-        <link rel="stylesheet" type="text/css" href="/assets/gmu/assets/widget/button/button.css" />
-        <link rel="stylesheet" type="text/css" href="/assets/gmu/assets/widget/button/button.default.css" />
-        <!--组件依赖css end-->
+        <link rel="stylesheet" type="text/css" href="/assets/gmu/2.1.0/gmu.css" />
+
 
         #SLITERAL($!ui.__style)
 
-        <!--组件依赖js begin-->
-        <script type="text/javascript" src="/assets/gmu/dist/zepto.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/extend/fix.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/core/gmu.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/core/event.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/core/widget.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/widget/toolbar/toolbar.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/widget/toolbar/$position.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/extend/throttle.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/extend/event.scrollStop.js"></script>
-        <script type="text/javascript" src="/assets/gmu/src/extend/highlight.js"></script>
-        <script type="text/javascript"  id="test" src="/assets/gmu/src/widget/button/button.js"></script>
-        <!--组件依赖js end-->
+        <script type="text/javascript" src="/assets/gmu/2.1.0/gmu.js"></script>
+
     </head>
     <body>
 

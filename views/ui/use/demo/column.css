@@ -361,16 +361,30 @@ p {
 #toolbar {
     position: fixed;
     top: 0;
-
 }
 
 #removable-icon {
+    -webkit-user-select:none;
     width: 64px;
     height: 64px;
     background: url("../../../images/cm-icon.png") no-repeat;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 100px;
+    top: 100px;
     overflow: hidden;
     outline: 0;
+    display: inline-block;
+    white-space:nowrap;/*内容不换行*/
+    -webkit-box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+}
+
+.ui-toolbar-right {
+    top: 0;
 }
