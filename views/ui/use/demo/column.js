@@ -1,4 +1,4 @@
-
+/*
 var instance = new gmu.Toolbar('#J_toolbar1');
 instance.position({ top: window.innerHeight + window.scrollY - Zepto("#J_toolbar1").height() });
 Zepto("#J_toolbar1").hide();
@@ -55,6 +55,7 @@ Zepto('.ui-popover').on('touchstart', function(e) {
     e.stopPropagation();
 });
 
+
 // make btn dragable
 Zepto('#removable-icon').on('touchstart mousedown', function(e){
     e.stopPropagation();
@@ -102,3 +103,31 @@ Zepto('#removable-icon').on('touchstart mousedown', function(e){
         moved && e.preventDefault();
     });
 });
+    */
+
+
+var iconOffset = Zepto('#removable-icon').offset();
+Zepto('#toolbar').css({
+    right: -(iconOffset.left),
+    bottom: '0px'
+});
+
+Zepto('#removable-icon').on('singleTap', function(e) {
+    Zepto('#toolbar').attr('data-show', Zepto('#toolbar').attr('data-show') === 'on' ? 'off': 'on');
+    if (Zepto('#toolbar').attr('data-show') === 'on') {
+        Zepto('#toolbar').stop && Zepto('#toolbar').stop(true);
+        clearInterval();
+        Zepto('#toolbar').animate({
+            right: '0px'
+        }, 120, 'ease-out');
+    } else if (Zepto('#toolbar').attr('data-show') === 'off') {
+        Zepto('#toolbar').stop && Zepto('#toolbar').stop(true);
+        clearInterval();
+        Zepto('#toolbar').animate({
+            right:  -(iconOffset.left)
+        }, 120, 'ease-out');
+    }
+
+
+});
+

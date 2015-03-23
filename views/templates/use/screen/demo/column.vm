@@ -1,6 +1,15 @@
 
 <div class="container">
-<div id="removable-icon"></div>
+
+<div class="slider">
+    <div id="removable-icon"></div>
+    <div class="toolbar" id="toolbar">
+
+    </div>
+</div>
+
+#*
+
     <div id="J_toolbar1" class="toolbar1">
         <a href="#" id="J_btn2">
             返回
@@ -10,6 +19,7 @@
         <span class="btn_1"  id="J_btn1">知道</span>
     </div>
 
+*#
     <p>
     教师能力要有四个标准：教学内容、激情、励志、幽默。<br />这四个标准完美地贴合了学生的心理，让他们在课堂上既收获知识，又收获生命的力量。<br />
     要引人敬意，就要研究一个非常专业的领域，在那个领域中，你是最顶尖的，至少是中国前十名，这样无论任何时候你都有话说，有事情可做。<br />我俞敏洪原来想成为中国研究英语的前100名，但后来发现根本不可能。所以我就背单词，用一年的时间背诵了一本英文词典，成为中国单词专家。<br />
